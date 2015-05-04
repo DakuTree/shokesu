@@ -1,0 +1,29 @@
+html  {
+	background-color: white;
+	color: white;
+}
+
+/* This design is heavily based off http://thatpaperdream.tumblr.com/ | Credits to them for the original idea */
+#overlay {
+	z-index: -1;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+
+	background-color: rgba(20, 20, 20, 0.9);
+	height: 100%;
+	width: 100%;
+}
+
+#main {
+	margin: 0 auto;
+
+	background-color: rgba(15, 15, 15, 0.9);
+	height: 500px;
+	/* CHANGEME(?) Fixed width feels wrong */
+	width: 800px;
+}
+
+#main > header {}
+#main > article {}
+#main > footer {}
