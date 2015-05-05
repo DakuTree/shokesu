@@ -1,0 +1,6 @@
+#ignore
+assets/img/*
+
+#allow
+!assets/img/icons
+!assets/img/icons/*
