@@ -5,5 +5,12 @@
 
     Avareei (also known as Daku / DakuTree) -- Creator/Admin -- @Avareei
 
+
+# THANKS
+
+    http://thatpaperdream.tumblr.com/ // http://paperdream.net - For the original design concept. It does a really nice job of giving focus to the imae
+
 # TECHNOLOGY COLOPHON
-	???
+
+    HTML5, CSS3
+    jQuery, Modernizr

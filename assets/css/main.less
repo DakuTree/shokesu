@@ -1,0 +1,68 @@
+/*** DEBUG ***/
+.withOutline {
+	outline: 1px solid black;
+}
+
+/*** PAGE ***/
+
+html, body {
+	height: 100%;
+	min-height: 100%;
+
+	color: white;
+}
+
+/* This gives us a centered background-cover version of the image which is overlayed with a semi-transparent black box.
+   The idea for this originated from http://thatpaperdream.tumblr.com/, so credits to them for the original idea. */
+html {
+	/* Most of this could be written as a single CSS, but this makes it readable */
+	background-color: white; /* Fallback, incase of weird dimensions */
+	// background-image: url(); /* This will be set with inline CSS on the page */
+	background-repeat: no-repeat;
+	background-attachment: center;
+	background-position: center;
+
+	background-size: cover;
+
+	/* TEST: The current image is just an example for now. */
+	background-image: url(../img/bdf61f5957e0018d28176b22f7a876fa.jpg);
+}
+#overlay {
+	z-index: -1; /* Stay on top of background, but behind everything else */
+	position: absolute;
+	top: 0;
+	bottom: 0;
+
+	height: 100%;
+	width: 100%;
+
+	background-color: rgba(20, 20, 20, 0.5);
+}
+
+/*** INNERPAGE ***/
+
+#main { padding: 15px 15px 0 15px; }
+
+article {
+	position: fixed;
+	left: 0;
+	// left: 50%;
+	// margin: 0 0 0 -50%;
+
+	max-height: ~"calc(100% - 15px - 5px - 5px - 20px)"; //15px padding-top + 5px top/bottom border + 20px footer
+	height: 100%;
+	width:  100%;
+
+	text-align: center;
+
+	& > #main-image {
+		text-align: center;
+		border: 5px solid rgba(15, 15, 15, 0.75);
+		max-width: 100%;
+		max-height: 100%;
+		vertical-align: middle;
+	}
+}
+
+
+#main > footer {}
