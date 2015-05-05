@@ -10,6 +10,7 @@ html, body {
 	min-height: 100%;
 
 	color: white;
+	font-family: Helvetica, Arial, sans-serif;
 }
 
 /* This gives us a centered background-cover version of the image which is overlayed with a semi-transparent black box.
@@ -37,11 +38,12 @@ html {
 	width: 100%;
 
 	background-color: rgba(20, 20, 20, 0.5);
+	// background-color: rgba(235, 235, 235, 0.5);
 }
 
 /*** INNERPAGE ***/
 
-#main { padding: 15px 15px 0 15px; }
+#main { padding: 8px 15px 0 15px; }
 
 article {
 	position: fixed;
@@ -49,20 +51,40 @@ article {
 	// left: 50%;
 	// margin: 0 0 0 -50%;
 
-	max-height: ~"calc(100% - 15px - 5px - 5px - 20px)"; //15px padding-top + 5px top/bottom border + 20px footer
+	max-height: ~"calc(100% - 15px - 5px - 5px - 26px)"; //15px padding-top + 5px top/bottom border + 26px footer
 	height: 100%;
 	width:  100%;
 
 	text-align: center;
 
-	& > #main-image {
+	#image {
 		text-align: center;
 		border: 5px solid rgba(15, 15, 15, 0.75);
 		max-width: 100%;
 		max-height: 100%;
 		vertical-align: middle;
 	}
+
 }
 
+footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
 
-#main > footer {}
+	width: 100%;
+	text-align: center;
+
+	background-color: rgba(15, 15, 15, 0.75);
+
+	div { display: inline; }
+
+	a {
+		color: white;
+	
+		text-decoration: initial;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
