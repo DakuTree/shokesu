@@ -75,6 +75,7 @@ html {
 		bottom: 0;
 		left: 0;
 
+		height: 26px;
 		width: 100%;
 		text-align: center;
 
@@ -91,10 +92,23 @@ html {
 			}
 		}
 
-		#image-info, #footer-nav {
+		#footer-pagenav, #image-info, #footer-nav {
 			background-color: rgba(15, 15, 15, 0.40);
 
 			padding: 0 10px 0 10px;
+		}
+
+		#footer-pagenav {
+			float: left;
+
+			height: 26px;
+			// width: 26px;
+
+			margin-right: 6px;
+	
+			span, a {height: 26px; width: 26px; display: inline-block;}
+			span { background-color: rgba(100,100,100, 0.50); }
+			a:hover { text-decoration: none; }
 		}
 
 		#image-info {
