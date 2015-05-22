@@ -17,6 +17,7 @@
 
 		<link rel="stylesheet" href="assets/css/vendor/normalize.min.css">
 		<link rel="stylesheet" href="assets/css/vendor/boilerplate.css">
+		<link rel="stylesheet" href="assets/css/vendor/modal.css">
 		<link rel="stylesheet/less" href="assets/css/main.less" />
 		<!--<link rel="stylesheet" href="assets/css/main.css">-->
 
@@ -36,7 +37,7 @@
 		<!-- IDEA: Might get rid of the whole header and just go with a footer similar to what I have at the moment -->
 		<div id="main">
 			<article>
-				<img id='image' src='assets/img/bdf61f5957e0018d28176b22f7a876fa.jpg' />
+				<img id='image' src='assets/img/bdf61f5957e0018d28176b22f7a876fa.jpg' alt='HARVEST Coloured Insert Page (pg23) by Kawakami Rokkaku' />
 				<!-- IDEA: We could have the title as a caption below the image. It does make it difficult to include artist links though. -->
 				<!-- IMAGE INFO || ARTIST INFO -->
 			</article>
@@ -45,7 +46,33 @@
 					<!--Week: <span>47/52</span>-->
 					<div id='image-title'><a href="http://ajisaidenden.blog89.fc2.com/blog-entry-181.html">HARVEST Coloured Insert Page (pg23)</a></div>
 					<div id='image-artist'>
-						<div id='image-artist-name'> - <span id='inline-name'>Kawakami Rokkaku</span></div>
+						<div id='image-artist-name'><span id='inline-name'><a href='#modal-show'>Kawakami Rokkaku</a></span></div>
+						<section class="modal--show" id="modal-show" tabindex="-1" role="dialog" aria-labelledby="label-show" aria-hidden="true">
+							<div class="modal-inner">
+								<header><h2 id="label-show">Kawakami Rokkaku</h2></header>
+
+								<div class="modal-content">
+									<p>Male Japanese artist, mangaka.</p>
+									<p>Name: 川上六角 (Kawakami Rokkaku)<br/>Circle: アジサイデンデン (Ajisai Denden).</p>
+
+									<ul id='image-artist-links'>
+										<li><span class="a-homepage"><a href="http://ajisaidenden.x.fc2.com/"></a></span></li>
+										<li><span class="a-blog"><a href="http://ajisaidenden.blog89.fc2.com/"></a></li>
+										<li><span class="a-twitter"><a href="http://twitter.com/kawakamirokkaku"></a></li>
+										<li><span class="a-pixiv"><a href="http://www.pixiv.net/member.php?id=215983"></a></li>
+										<li><span class="a-nijie"><a href="http://nijie.info/members.php?id=24007"></a></li>
+										<li><span class="a-tumblr"><a href="http://kawakami6kaku.tumblr.com/"></a></li>
+										<li><span class="a-circlems"><a href="http://c10018277.circle.ms/oc/CircleProfile.aspx"></a></li>
+										<li><span class="a-doujinshi"><a href="http://doujinshi.mugimugi.org/browse/author/42821/"></a></li>
+										<li><span class="a-toranoana"><a href="http://www.toranoana.jp/mailorder/cot/author/21/c0eebee520cfbbb3d1_01.html"></a></li>
+										<li><span class="a-melonbooks"><a href="http://www.melonbooks.com/?main_page=maker_info&makers_id=MK0000007408"></a></li>
+									</ul>
+									<div id='thnks-footer'>Thanks to the folks over @ Danbooru for gathering most of this info.</div>
+								</div>
+							</div>
+
+							<a href="#!" class="modal-close" title="Close this modal" data-dismiss="modal" data-close="Close">&times;</a>
+						</section>
 						<!--<ul id='image-artist-links'>
 							<li><a href="http://ajisaidenden.x.fc2.com/" class="homepage"></a></li>
 							<li><a href="http://ajisaidenden.blog89.fc2.com/" class="blog"></a></li>
@@ -59,7 +86,11 @@
 					</div>
 				</div>
 
-				<div id='footer-nav'></div>
+				<div id='footer-nav'>
+					<a href='/'>Home</a> || 
+					<a href='/history.html'>History</a> || 
+					<a href='/about.html'>About</a>
+				</div>
 			</footer>
 		</div>
 

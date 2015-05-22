@@ -11,6 +11,8 @@ html, body {
 
 	color: white;
 	font-family: Helvetica, Arial, sans-serif;
+
+	overflow: hidden;
 }
 
 /* This gives us a centered background-cover version of the image which is overlayed with a semi-transparent black box.
@@ -43,48 +45,118 @@ html {
 
 /*** INNERPAGE ***/
 
-#main { padding: 8px 15px 0 15px; }
+#main {
+	padding: 8px 15px 0 15px;
 
-article {
-	position: fixed;
-	left: 0;
-	// left: 50%;
-	// margin: 0 0 0 -50%;
+	article {
+		position: fixed;
+		left: 0;
+		// left: 50%;
+		// margin: 0 0 0 -50%;
 
-	max-height: ~"calc(100% - 15px - 5px - 5px - 26px)"; //15px padding-top + 5px top/bottom border + 26px footer
-	height: 100%;
-	width:  100%;
+		max-height: ~"calc(100% - 15px - 5px - 5px - 26px)"; //15px padding-top + 5px top/bottom border + 26px footer
+		height: 100%;
+		width:  100%;
 
-	text-align: center;
-
-	#image {
 		text-align: center;
-		border: 5px solid rgba(15, 15, 15, 0.75);
-		max-width: 100%;
-		max-height: 100%;
-		vertical-align: middle;
+
+		#image {
+			text-align: center;
+			border: 5px solid rgba(15, 15, 15, 0.75);
+			max-width: 100%;
+			max-height: 100%;
+			vertical-align: middle;
+		}
+
 	}
 
-}
+	footer {
+		position: fixed;
+		bottom: 0;
+		left: 0;
 
-footer {
-	position: fixed;
-	bottom: 0;
-	left: 0;
+		width: 100%;
+		text-align: center;
 
-	width: 100%;
-	text-align: center;
+		background-color: rgba(15, 15, 15, 0.75);
 
-	background-color: rgba(15, 15, 15, 0.75);
+		div { display: inline; }
 
-	div { display: inline; }
+		a {
+			color: white;
+		
+			text-decoration: initial;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 
-	a {
-		color: white;
+		#image-info, #footer-nav {
+			background-color: rgba(15, 15, 15, 0.40);
+
+			padding: 0 10px 0 10px;
+		}
+
+		#image-info {
+			float: left;
+
+			#inline-name::before {
+				color: white;
+				content: " - ";
+			}
+
+			color: black;
+
+			/* CUSTOM SETTINGS FOR modal.css */
+			.modal-inner {
+				height: auto;
+				overflow-y: hidden;
+
+				background-color: rgba(255,255,255,0.8);
+				border-radius: 2px 0 2px 2px;
 	
-		text-decoration: initial;
-		&:hover {
-			text-decoration: underline;
+				#image-artist-links {
+					font-size: 14px;
+					li {
+						text-align: left;
+
+						/* Here we add a bunch of text with CSS. Yay CSS. */
+						.a-homepage:before   { color: black; content: 'Homepage: ' }
+						.a-blog:before       { color: black; content: 'Blog: ' }
+						.a-twitter:before    { color: black; content: 'Twitter: ' }
+						.a-pixiv:before      { color: black; content: 'Pixiv: ' }
+						.a-nijie:before      { color: black; content: 'Nijie: ' }
+						.a-tumblr:before     { color: black; content: 'Tumblr: ' }
+						.a-circlems:before   { color: black; content: 'Circlems: ' }
+						.a-doujinshi:before  { color: black; content: 'Doujinshi: ' }
+						.a-toranoana:before  { color: black; content: 'Toranoana: ' }
+						.a-melonbooks:before { color: black; content: 'Melonbooks: ' }
+							
+						a:after {
+							text-decoration: underline;
+							color: black;
+							content: attr(href);
+						}
+					}
+				}
+
+				#thnks-footer {
+					font-size: 11px;
+					color: grey;
+				}
+			}
+			.modal-close:before { background: rgba(0, 0, 0, 0.5); } /* This is the full-screen overlay that the modal creates */
+			/* This is the close button */
+			.modal-close:after {
+				color: black;
+				background-color: rgba(255,255,255,0.8);
+				padding: 1px 8px 0;
+				border-radius: 2px 2px 0 0;
+			}
+		}
+		#footer-nav {
+			float: right;
+			a { text-decoration: underline; }
 		}
 	}
 }
