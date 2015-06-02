@@ -1,0 +1,18 @@
+{
+	"name_en": "CanKing", //CHECK: This is the name he uses on DA. CN translation may be different
+	"name_cn": "空罐王",
+	"name_jp": "",
+
+	"note_en": "Taiwanese artist.",
+	"note_jp": "",
+
+	"urls": {
+		"blog_cn": "http://tuatha.blog126.fc2.com/",
+		"pixiv": "http://www.pixiv.net/member.php?id=489858",
+		"deviantart":    "http://canking.deviantart.com/",
+		"facebook": "http://facebook.com/canking",
+		"plurk": "http://www.plurk.com/tuatha",
+		"doujinshi": "http://www.doujinshi.org/browse/author/96900/",
+		"toranoana": "http://www.toranoana.jp/mailorder/cot/circle/82/39/5730363833393832/b6f5e6a5b2a6_01.html"
+	}
+}

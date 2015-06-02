@@ -1,0 +1,21 @@
+{
+	"name_en": "Yuugiri", //"Evening Mist" || Unsure if should include that in the name..
+	"name_jp": "夕霧 （ゆうぎり）", //NOTE: That 夕 isn't the katakana ta (タ). 
+
+	"note_en": "Artist.",
+	"note_jp": "",
+
+	"urls": {
+		"homepage": "http://www.dragonfin.sakura.ne.jp/index.html",
+		"pixiv": "http://www.pixiv.net/member.php?id=115684",
+		"nijie": "http://nijie.info/members.php?id=2404",
+		"twitter": "https://twitter.com/u_slash",
+		"twitpic": "http://twitpic.com/photos/u_slash",
+		"tumblr": "http://u-slash.tumblr.com/",
+		"drawr": "http://drawr.net/show.php?id=1409353",
+		"toranoana": "https://www.toranoana.jp/mailorder/cot/author/83/cdbcccb8_01.html",
+		"melonbooks": "https://www.melonbooks.co.jp/search/search.php?name=%E5%A4%95%E9%9C%A7&text_type=author",
+		"dlsite": "http://www.dlsite.com/maniax/circle/profile/=/maker_id/RG05032",
+		"dmm": "http://www.dmm.co.jp/en/dc/doujin/-/list/=/article=maker/id=26001/"
+	}
+}

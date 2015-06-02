@@ -1,0 +1,22 @@
+{
+	"name_en": "OReBalGum (ORBG)",
+	"name_jp": "",
+	//"name_kr": "오래밝음",
+
+	"note_en": "Korean artist, scenario writer.",
+	"note_jp": "",
+
+	"urls": {
+		"homepage": "http://www.orbg.net",
+		"egloos": "http://orbg.egloos.com/",
+		"egblog": "http://orbg.exblog.jp/",
+		"pixiv": "http://www.pixiv.net/member.php?id=337920",
+		"tinami": "http://www.tinami.com/creator/profile/22390",
+		"deviantart": "http://orbg.deviantart.com/",
+		"twitter": ["http://twitter.com/ORBG", "https://twitter.com/ORBG_JP"],
+		"twitpic": "http://twitpic.com/photos/ORBG",
+		"mixi": "http://mixi.jp/view_album.pl?id=19582414&owner_id=5698771",
+		"comiczin": "http://shop.comiczin.jp/products/list.php?category_id=3576",
+		"toranoana": "http://www.toranoana.jp/mailorder/cot/author/15/4f524247_01.html"
+	}
+}

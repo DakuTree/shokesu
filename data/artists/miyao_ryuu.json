@@ -1,0 +1,18 @@
+{
+	"name_en": "Miyao Ryuu",
+	"name_jp": "都尾 琉",
+
+	"note_en": "Artist, mangaka.\nPreviously known as NSFW pen-name: ヲルト (Woruto).\nOld name: キシリトヲル (Kishiri Toworu).",
+	"note_jp": "",
+
+	"urls": {
+		"homepage_old": "http://johnny-do.com/doujin/toworu/",
+		"pixiv": ["http://www.pixiv.net/member.php?id=5705538", "http://www.pixiv.net/member.php?id=618585", "http://www.pixiv.net/member.php?id=12861042"],
+		"seiga": "http://seiga.nicovideo.jp/user/illust/1107031?target=illust_all",
+		"twitter": "http://twitter.com/miyaoryuu",
+		"stickam": "http://www.stickam.jp/profile/kisiritoworu",
+		"amazon": "http://www.amazon.co.jp/%E3%82%AD%E3%82%B7%E3%83%AA%E3%83%88%E3%83%B2%E3%83%AB/e/B004LW7AJ2/",
+		"melonbooks": ["https://www.melonbooks.co.jp/circle/index.php?circle_id=12772", "http://www.melonbooks.com/index.php?main_page=maker_info&makers_id=MK0000001494"],
+		"toranoana": ["http://www.toranoana.jp/mailorder/cot/author/72/c5d4c8f8ceb0_01.html", "https://www.toranoana.jp/mailorder/cot/author/22/a5ada5b7a5eaa5c8a5f2a5eb_01.html"]
+	}
+}

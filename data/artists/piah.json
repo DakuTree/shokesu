@@ -1,0 +1,13 @@
+{
+	"name_en": "piah", //CHECK: Artist seems to be korean, should we have a name_kr?
+	"name_jp": "",
+
+	"note_en": "",
+	"note_jp": "",
+
+	"urls": {
+		"homepage": "http://piah.kr",
+		"pixiv":    "http://www.pixiv.net/member.php?id=103178",
+		"egloos":   "http://piah.egloos.com/"
+	}
+}

@@ -1,0 +1,13 @@
+{
+	//NOTE: This artist seems to have completely removed themselves from the internet, this includes homepage and pixiv.
+	"name_en": "Meet Neet",
+	"name_jp": "",
+
+	"note_en": "<Missing> artist.\n[Artist appears to have deleted their homepage & pixiv. No luck finding new account/homepage..]",
+	"note_jp": "",
+
+	"urls": {
+		"homepage_old": "http://anno80.blog111.fc2.com/",
+		"pixiv_old":    ["http://www.pixiv.net/member.php?id=2790132", "http://www.pixiv.net/member.php?id=2688339", "http://www.pixiv.net/member.php?id=102533"]
+	}
+}

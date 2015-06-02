@@ -1,0 +1,22 @@
+{
+	"name_en": "LasterKing",
+	"name_jp": "",
+
+	"note_en": "Taiwanese artist living in the US.",
+	"note_jp": "",
+
+	"urls": {
+		"homepage": "http://olin.web.fc2.com/",
+		"blog":     "http://blog.yam.com/lasterK",
+		"blog_old": "http://gintama00.blog126.fc2.com/",
+		"pixiv": ["http://www.pixiv.net/member.php?id=198128", "http://www.pixiv.net/member.php?id=828272"],
+		"deviantart":    "http://lasterking.deviantart.com/"
+		"twitter":  "https://twitter.com/LasterK",
+		"twitpic": "http://twitpic.com/photos/LasterK",
+		"plurk": "http://www.plurk.com/lasterK",
+		"hentai-foundry": "http://www.hentai-foundry.com/user/lasterk/profile",
+		"doujinshi": "http://www.doujinshi.org/browse/author/92092/LasterK/",
+		"patreon": "https://www.patreon.com/lasterk"
+		//NOTE: Sadly this artist doesn't appear to have anywhere to buy their works online.
+	}
+}

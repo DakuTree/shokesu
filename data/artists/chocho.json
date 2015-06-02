@@ -1,0 +1,17 @@
+{
+	"name_en": "chocho", //Previous name: Dandelion
+	"name_jp": "チョチョ",
+	"name_kr": "쵸쵸",
+
+	"note_en": "Korean artist.",
+	"note_jp": "",
+
+	"urls": {
+		"blog_kr": "http://blog.naver.com/homelessfox",
+		"pixiv": "http://www.pixiv.net/member.php?id=316333",
+		"twitter": "https://twitter.com/chochoske",
+		"twitpic": "http://twitpic.com/photos/chochoske",
+		"yfrog": "http://yfrog.com/user/chochoske/photos",
+		"homepage_dead": "http://paradis.lil.to"
+	}
+}
