@@ -3,6 +3,7 @@ assets/_
 assets/img/*
 node_modules
 npm-debug.log
+vendor/
 build_
 
 #allow

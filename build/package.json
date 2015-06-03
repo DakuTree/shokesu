@@ -14,6 +14,7 @@
 	"production" : "http://holo.moe",
 	"dependencies" : {
 		"grunt" : "~0",
+		"grunt-bower-task" : "~0",
 		"grunt-contrib-less": "~0"
 	},
 	"scripts" : {

@@ -3,11 +3,23 @@ module.exports = function(grunt){
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
-		/*----------------------------------( VERSIONING )----------------------------------*/
+		/* VERSIONING */
 
 		now: grunt.template.today('yyyymmdd'),
 
-		//Convert LESS to minified CSS.
+		/* BOWER */
+		bower: {
+			install: {
+				options: {
+					targetDir: './files/vendor',  // A directory where you want to keep your Bower packages.
+					cleanup: true,                // Will clean target and bower directories.
+					layout: 'byComponent',        // Folder structure type.
+					verbose: true,                // Debug output.
+				},
+			},
+		},
+
+		/* LESS */
 		less: {
 			build: {
 				options: {
@@ -19,6 +31,7 @@ module.exports = function(grunt){
 		}
 	});
 
+	grunt.loadNpmTasks('grunt-bower-task');
 	grunt.loadNpmTasks('grunt-contrib-less');
 
 	grunt.registerTask('default', ['less']);
