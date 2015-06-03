@@ -3,6 +3,7 @@
 	"version": "0.0.0",
 	"description": "holo.moe is a small personal project to showcase various media of the character Holo from Spice and Wolf.",
 	"homepage": "http://holo.moe",
+	"private": true,
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/DakuTree/holo.moe.git"
