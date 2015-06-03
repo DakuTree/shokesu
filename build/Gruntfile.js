@@ -20,6 +20,17 @@ module.exports = function(grunt){
 			},
 		},
 
+		/*----------------------------------( WATCH )----------------------------------*/
+
+		watch: {
+			files: [
+				'./files/main.less',
+				'./files/main.js',
+				'./files/templates/**/*',
+			],
+			tasks: ['default'],
+		},
+
 		/*----------------------------------( ENV )----------------------------------*/
 
 		env: {
@@ -90,6 +101,7 @@ module.exports = function(grunt){
 	});
 
 	grunt.loadNpmTasks('grunt-bower-task');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-env');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-less');
