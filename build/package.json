@@ -12,7 +12,6 @@
 		"url" : "http://codeanimu.net"
 	},
 	"production" : "http://holo.moe",
-
 	"dependencies" : {
 		"grunt" : "~0",
 		"grunt-contrib-less": "~0"
