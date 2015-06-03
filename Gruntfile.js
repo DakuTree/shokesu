@@ -1,21 +1,18 @@
 module.exports = function(grunt){
+	'use strict';
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
+		now: grunt.template.today('yyyymmdd'),
+
 		//Convert LESS to CSS.
 		less: {
-			development: {
+			build: {
 				options: {
-					paths: ["assets/css"]
+					cleancss: true,
+					compress: true
 				},
-				files: {"assets/css/main.css": "assets/css/main.less"}
-			},
-			production: {
-				options: {
-					paths: ["assets/css"],
-					cleancss: true
-				},
-				files: {"assets/css/main.css": "assets/css/main.less"}
+				files: {"assets/_/main-<%= now %>.css": "assets/main.less"}
 			}
 		}
 	});

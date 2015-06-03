@@ -1,4 +1,5 @@
 #ignore
+assets/_
 assets/img/*
 node_modules
 
