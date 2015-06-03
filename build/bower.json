@@ -1,0 +1,33 @@
+{
+	"name": "bower",
+	"dependencies": {
+		"jquery": "1.x",
+		"html5shiv": "3.x",
+		"less": "2.x",
+
+		"normalize-css": "~3",
+		"css-modal": "latest",
+		"html5bp": "git@github.com:h5bp/html5-boilerplate.git"
+	},
+	"exportsOverride": {
+		"jquery": {
+			"../js/": "dist/jquery.js"
+		},
+		"html5shiv": {
+			"../js/": "dist/html5shiv.js"
+		},
+		"less": {
+			"../js/": "dist/less.js"
+		},
+
+		"normalize-css": {
+			"../css/": "normalize.css"
+		},
+		"css-modal": {
+			"../css/": "build/modal.css"
+		},
+		"html5bp": {
+			"../css/": "dist/css/main.css"
+		}
+	}
+}
