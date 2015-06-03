@@ -3,6 +3,7 @@ assets/_
 assets/img/*
 node_modules
 npm-debug.log
+build_
 
 #allow
 !assets/img/icons
