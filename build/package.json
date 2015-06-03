@@ -29,6 +29,7 @@
 		"dev" : "grunt",
 		"grunt" : "grunt",
 		"prod" : "grunt prod",
-		"watch" : "grunt watch"
+		"watch" : "grunt watch",
+		"update" : "grunt bower rename"
 	}
 }
