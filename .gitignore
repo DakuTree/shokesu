@@ -1,11 +1,12 @@
 #ignore
-assets/_
-assets/img/*
 node_modules
 npm-debug.log
+
+dev/assets/img
+prod/assets/img
 vendor/
+
+
 build_
 
 #allow
-!assets/img/icons
-!assets/img/icons/*
