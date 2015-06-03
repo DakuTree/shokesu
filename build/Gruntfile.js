@@ -31,6 +31,20 @@ module.exports = function(grunt){
 			},
 		},
 
+		/*----------------------------------( CLEAN )----------------------------------*/
+
+		clean: {
+			options: {
+				force: true, // Allows for deletion of folders outside current working dir (CWD). Use with caution.
+			},
+			dev: [
+				'../dev/**/*'
+			],
+			prod: [
+				'../prod/**/*'
+			],
+		},
+
 		/*----------------------------------( LESS )----------------------------------*/
 
 		less: {
@@ -46,7 +60,6 @@ module.exports = function(grunt){
 		/*----------------------------------( COPY )----------------------------------*/
 
 		copy: {
-
 			dev: {
 				files: [
 					{
@@ -60,7 +73,6 @@ module.exports = function(grunt){
 					},
 				],
 			},
-
 			prod: {
 				files: [
 					{
@@ -79,6 +91,7 @@ module.exports = function(grunt){
 
 	grunt.loadNpmTasks('grunt-bower-task');
 	grunt.loadNpmTasks('grunt-env');
+	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 
@@ -94,7 +107,7 @@ module.exports = function(grunt){
 	//----------------------------------
 
 	grunt.registerTask('init', []);
-	grunt.registerTask('dev', ['init', 'env:dev', 'copy:dev']);
-	grunt.registerTask('prod', ['init', 'dev', 'env:prod', 'less:prod', 'copy:prod']);
+	grunt.registerTask('dev', ['init', 'env:dev', 'clean:dev', 'copy:dev']);
+	grunt.registerTask('prod', ['init', 'dev', 'env:prod', 'clean:prod', 'less:prod', 'copy:prod']);
 	grunt.registerTask('default', ['dev']);
 };
