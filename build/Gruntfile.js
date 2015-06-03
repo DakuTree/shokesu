@@ -78,6 +78,24 @@ module.exports = function(grunt){
 			}
 		},
 
+		/*----------------------------------( CSSMIN )----------------------------------*/
+
+		cssmin: {
+			options: {
+				shorthandCompacting: false,
+				roundingPrecision: 14
+			},
+			prod: {
+				files: [{
+					expand: true,
+					cwd: './files/vendor/css/',
+					src: ['*.css', '!*.min.css'],
+					dest: './files/vendor/css/',
+					ext: '.min.css'
+				}]
+			}
+		},
+
 		/*----------------------------------( PREPROCESS )----------------------------------*/
 
 		preprocess: {
@@ -184,6 +202,7 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-env');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-less');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-preprocess');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 
