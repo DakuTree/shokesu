@@ -155,7 +155,8 @@ module.exports = function(grunt){
 							'img/*.*',
 							'main.less',
 							'main.js',
-							'vendor/**/*.*'
+							'vendor/**/*.*',
+							'!vendor/**/*.min.css'
 						],
 						dest: '../dev/assets/'
 					},
