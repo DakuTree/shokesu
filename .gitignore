@@ -1,5 +1,6 @@
 #ignore
 assets/img/*
+node_modules
 
 #allow
 !assets/img/icons
