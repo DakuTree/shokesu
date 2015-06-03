@@ -20,6 +20,16 @@ module.exports = function(grunt){
 			},
 		},
 
+		/*----------------------------------( RENAME )----------------------------------*/
+
+		//Because bower doesn't allow you to rename files :<
+		rename: {
+			moveThat: {
+				src:  './files/vendor/css/main.css',
+				dest: './files/vendor/css/boilerplate.css'
+			}
+		},
+
 		/*----------------------------------( WATCH )----------------------------------*/
 
 		watch: {
@@ -167,6 +177,7 @@ module.exports = function(grunt){
 	});
 
 	grunt.loadNpmTasks('grunt-bower-task');
+	grunt.loadNpmTasks('grunt-rename');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-env');
 	grunt.loadNpmTasks('grunt-contrib-clean');
@@ -187,6 +198,6 @@ module.exports = function(grunt){
 
 	grunt.registerTask('init', []);
 	grunt.registerTask('dev', ['init', 'env:dev', 'clean:dev', 'preprocess:dev', 'copy:dev']);
-	grunt.registerTask('prod', ['init', 'dev', 'env:prod', 'clean:prod', 'less:prod', 'preprocess:prod', 'copy:prod']);
+	grunt.registerTask('prod', ['init', 'dev', 'env:prod', 'clean:prod', 'less:prod', 'cssmin:prod', 'preprocess:prod', 'copy:prod']);
 	grunt.registerTask('default', ['dev']);
 };
