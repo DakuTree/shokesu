@@ -16,7 +16,8 @@
 	"dependencies" : {
 		"grunt" : "~0",
 		"grunt-bower-task" : "~0",
-		"grunt-contrib-less": "~0"
+		"grunt-contrib-less": "~0",
+		"grunt-env" : "~0"
 	},
 	"scripts" : {
 		"bower" : "grunt bower",

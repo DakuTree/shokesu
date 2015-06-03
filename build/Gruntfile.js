@@ -3,11 +3,12 @@ module.exports = function(grunt){
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
-		/* VERSIONING */
+		/*----------------------------------( VERSIONING )----------------------------------*/
 
 		now: grunt.template.today('yyyymmdd'),
 
-		/* BOWER */
+		/*----------------------------------( BOWER )----------------------------------*/
+
 		bower: {
 			install: {
 				options: {
@@ -19,20 +20,45 @@ module.exports = function(grunt){
 			},
 		},
 
+		/*----------------------------------( ENV )----------------------------------*/
+
+		env: {
+			dev: {
+				NODE_ENV: 'DEVELOPMENT',
+			},
+			prod: {
+				NODE_ENV: 'PRODUCTION',
+			},
+		},
 		/* LESS */
 		less: {
-			build: {
+			prod: {
 				options: {
 					cleancss: true,
 					compress: true
 				},
-				files: {"assets/_/main-<%= now %>.css": "assets/main.less"}
+				files: {"../prod/assets/main.css": "files/main.less"} /* There should be some cache control here */
 			}
 		}
 	});
 
 	grunt.loadNpmTasks('grunt-bower-task');
+	grunt.loadNpmTasks('grunt-env');
 	grunt.loadNpmTasks('grunt-contrib-less');
 
-	grunt.registerTask('default', ['less']);
+	//----------------------------------
+
+	/**
+	 * @see https://github.com/onehealth/grunt-preprocess/issues/7
+	 * @see https://github.com/onehealth/grunt-env/issues/4
+	 */
+
+	grunt.registerTask('printenv', function () { console.log(process.env); });
+
+	//----------------------------------
+
+	grunt.registerTask('init', []);
+	grunt.registerTask('dev', ['init', 'env:dev']);
+	grunt.registerTask('prod', ['init', 'dev', 'env:prod', 'less:prod']);
+	grunt.registerTask('default', ['dev']);
 };
