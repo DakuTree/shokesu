@@ -68,6 +68,53 @@ module.exports = function(grunt){
 			}
 		},
 
+		/*----------------------------------( PREPROCESS )----------------------------------*/
+
+		preprocess: {
+			options: {
+				context: {
+					description: '<%= pkg.description %>',
+					homepage: '<%= pkg.homepage %>',
+					license: '<%= _.pluck(pkg.licenses, "type").join(", ") %>',
+					name: '<%= pkg.name %>',
+					now: '<%= now %>',
+					production: '<%= pkg.production %>',
+					title: '<%= pkg.title %>',
+					ver: '<%= ver %>',
+					version: '<%= pkg.version %>',
+
+					google_analytics_id: "'UA-30896979-2'"
+				},
+			},
+
+			dev: {
+				files: [
+					{
+						expand: true,
+						cwd: './files/templates/',
+						src: [
+							'index.html',
+							'!includes/**/*'
+						],
+						dest: '../dev/',
+					},
+				],
+			},
+			prod: {
+				files: [
+					{
+						expand: true,
+						cwd: './files/templates/',
+						src: [
+							'index.html',
+							'!includes/**/*'
+						],
+						dest: '../prod/',
+					}
+				],
+			},
+		},
+
 		/*----------------------------------( COPY )----------------------------------*/
 
 		copy: {
@@ -78,7 +125,8 @@ module.exports = function(grunt){
 						cwd: './files/',
 						src: [
 							'img/*.*',
-							'main.less'
+							'main.less',
+							'main.js'
 						],
 						dest: '../dev/assets/',
 					},
@@ -91,6 +139,7 @@ module.exports = function(grunt){
 						cwd: './files/',
 						src: [
 							'img/*.*',
+							'main.js'
 						],
 						dest: '../prod/assets/',
 					}
@@ -105,6 +154,7 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-env');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-less');
+	grunt.loadNpmTasks('grunt-preprocess');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 
 	//----------------------------------
@@ -119,7 +169,7 @@ module.exports = function(grunt){
 	//----------------------------------
 
 	grunt.registerTask('init', []);
-	grunt.registerTask('dev', ['init', 'env:dev', 'clean:dev', 'copy:dev']);
-	grunt.registerTask('prod', ['init', 'dev', 'env:prod', 'clean:prod', 'less:prod', 'copy:prod']);
+	grunt.registerTask('dev', ['init', 'env:dev', 'clean:dev', 'preprocess:dev', 'copy:dev']);
+	grunt.registerTask('prod', ['init', 'dev', 'env:prod', 'clean:prod', 'less:prod', 'preprocess:prod', 'copy:prod']);
 	grunt.registerTask('default', ['dev']);
 };

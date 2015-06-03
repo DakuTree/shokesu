@@ -1,38 +1,5 @@
-<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-		<title>Holo~</title> <!-- It's Holo, not Horo! -->
-		<meta name="description" content="A small site devoted to Holo.">
-		<meta name="keywords" content="Holo, Horo, ホロ, Spice & Wolf, S&W, Ookami to Koushinryou, Ōkami to Kōshinryō,  狼と香辛料">
-
-		<link rel="canonical" href="http://holo.moe">
-		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-		<link type="text/plain" rel="author" href="http://holo.moe/humans.txt" />
-
-		<link rel="stylesheet" href="assets/css/vendor/normalize.min.css">
-		<link rel="stylesheet" href="assets/css/vendor/boilerplate.css">
-		<link rel="stylesheet" href="assets/css/vendor/modal.css">
-		<link rel="stylesheet/less" href="assets/css/main.less" />
-		<!--<link rel="stylesheet" href="assets/css/main.css">-->
-
-		<!--[if lt IE 9]>
-			<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-			<script>window.html5 || document.write('<script src="assets/js/vendor/html5shiv.js"><\/script>')</script>
-		<![endif]-->
-
-		<!-- No Javascript here! At least not yet anyway... -->
-	</head>
-	<body>
+<!-- @include includes/top.html -->
 		<div id="overlay"></div>
-		<!--[if lt IE 8]>
-			<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-		<![endif]-->
 
 		<!-- IDEA: Might get rid of the whole header and just go with a footer similar to what I have at the moment -->
 		<div id="main">
@@ -44,8 +11,8 @@
 			<footer>
 				<div id='footer-pagenav'>
 					<!-- NOTE: These links are generated, and can be disabled. -->
-					<span id='pagenav-prev'><a href='#'><</a></span>
-					<span id='pagenav-next'><a href='#'>></a></span>
+					<span id='pagenav-prev'><a href='#'>&larr;</a></span>
+					<span id='pagenav-next'><a href='#'>&rarr;</a></span>
 				</div>
 
 				<div id='image-info'>
@@ -99,25 +66,4 @@
 				</div>
 			</footer>
 		</div>
-
-		<!-- JAVASCRIPT BELOW -->
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-		<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-
-		<script>less = {env: "development"};</script>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.3.1/less.min.js"></script>
-		<script>less.version || document.write('<script src="assets/js/vendor/less.min.js"><\/script>')</script>
-
-		<script src="assets/js/main.js"></script>
-
-		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-		<script>
-			(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-			function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-			e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-			e.src='//www.google-analytics.com/analytics.js';
-			r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-			ga('create','UA-30896979-2','auto');ga('send','pageview');
-		</script>
-	</body>
-</html>
+<!-- @include includes/bottom.html -->
