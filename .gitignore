@@ -2,6 +2,7 @@
 assets/_
 assets/img/*
 node_modules
+npm-debug.log
 
 #allow
 !assets/img/icons
