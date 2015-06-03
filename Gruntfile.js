@@ -5,7 +5,7 @@ module.exports = function(grunt){
 
 		now: grunt.template.today('yyyymmdd'),
 
-		//Convert LESS to CSS.
+		//Convert LESS to minified CSS.
 		less: {
 			build: {
 				options: {
@@ -14,6 +14,16 @@ module.exports = function(grunt){
 				},
 				files: {"assets/_/main-<%= now %>.css": "assets/main.less"}
 			}
+		},
+
+		//Autorun grunt on file change
+		watch: {
+			files: [
+				"assets/main.less",
+				"assets/main.js",
+				"data/*.json"
+			],
+			tasks: ['default']
 		}
 	});
 
