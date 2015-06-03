@@ -128,8 +128,17 @@ module.exports = function(grunt){
 							'main.less',
 							'main.js'
 						],
-						dest: '../dev/assets/',
+						dest: '../dev/assets/'
 					},
+					{
+						expand: true,
+						flatten: true,
+						cwd: './files/',
+						src: [
+							'misc/*'
+						],
+						dest: '../dev/'
+					}
 				],
 			},
 			prod: {
@@ -141,9 +150,17 @@ module.exports = function(grunt){
 							'img/*.*',
 							'main.js'
 						],
-						dest: '../prod/assets/',
+						dest: '../prod/assets/'
+					},
+					{
+						expand: true,
+						flatten: true,
+						cwd: './files/',
+						src: [
+							'misc/*'
+						],
+						dest: '../prod/'
 					}
-					// Optionally, add more generated files here ...
 				],
 			},
 		},
