@@ -112,7 +112,14 @@ module.exports = function(grunt){
 					ver: '<%= ver %>',
 					version: '<%= pkg.version %>',
 
-					google_analytics_id: "'UA-30896979-2'"
+					google_analytics_id: "'UA-30896979-2'",
+
+					//Post functions
+					//FIXME: This is currently not built for multiple differnt kinds of posts.
+					getPostImageElement: function () {
+						var post = grunt.config.get('postData')['posts']['2015-06'];
+						return '<img id="image" src="assets/img/'+post['filename']+'" alt="'+post['title_en']+'" />';
+					}
 				},
 			},
 
@@ -284,7 +291,7 @@ module.exports = function(grunt){
 		});
 
 		grunt.file.write('files/data/compiled.json', JSON.stringify(json, null, '\t'));
-		grunt.config.set('imageData', grunt.file.readJSON('files/data/compiled.json'));
+		grunt.config.set('postData', grunt.file.readJSON('files/data/compiled.json'));
 	});
 
 	grunt.registerTask('init', ['load_posts']);
