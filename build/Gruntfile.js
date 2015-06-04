@@ -188,7 +188,7 @@ module.exports = function(grunt){
 						var prevLink = "<span>&nbsp;</span>";
 						if(idIndex !== 0) {
 							var prevKey = keys[prevIndex];
-							prevLink = '<a href="history/'+prevKey+'.html">&larr;</a>';
+							prevLink = '<a href="posts/'+prevKey+'.html">&larr;</a>';
 						}
 
 						return prevLink;
@@ -203,7 +203,7 @@ module.exports = function(grunt){
 						var nextLink = "<span>&nbsp;</span>";
 						if(nextIndex < keys.length){
 							var nextKey = keys[nextIndex]
-							nextLink = '<a href="history/'+nextKey+'.html">&rarr;</a>';
+							nextLink = '<a href="posts/'+nextKey+'.html">&rarr;</a>';
 						}
 
 						return nextLink;
