@@ -139,6 +139,17 @@ module.exports = function(grunt){
 						    artist = grunt.config.get('postData')['artists'][post['artist']];
 
 						return artist['name_en'];
+					},
+					getPostArtistNote: function() {
+						var post   = grunt.config.get('postData')['posts']['2015-06'],
+						    artist = grunt.config.get('postData')['artists'][post['artist']];
+
+						var artist_note = artist['note_en'];
+						//Put note in pre block. Make sure new lines also have pre block.
+						artist_note = artist_note.replace(/\n*(.+)\n*/g, '\t\t\t\t\t\t\t\t\t<pre>$1</pre>');
+						artist_note = artist_note.trim(); //teim extra tabs from first line.
+
+						return artist_note;
 					}
 				},
 			},
