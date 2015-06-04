@@ -1,7 +1,6 @@
 {
 	"name": "bower",
 	"dependencies": {
-		"jquery": "1.x",
 		"html5shiv": "3.x",
 		"less": "2.x",
 
@@ -10,9 +9,6 @@
 		"html5bp": "git@github.com:h5bp/html5-boilerplate.git"
 	},
 	"exportsOverride": {
-		"jquery": {
-			"../js/": "dist/jquery.js"
-		},
 		"html5shiv": {
 			"../js/": "dist/html5shiv.js"
 		},

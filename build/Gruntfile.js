@@ -36,7 +36,6 @@ module.exports = function(grunt){
 		watch: {
 			files: [
 				'./files/main.less',
-				'./files/main.js',
 				'./files/templates/**/*',
 			],
 			tasks: ['default'],
@@ -256,7 +255,6 @@ module.exports = function(grunt){
 						src: [
 							'img/*.*',
 							'main.less',
-							'main.js',
 							'vendor/**/*.*',
 							'!vendor/**/*.min.css'
 						],
@@ -281,7 +279,6 @@ module.exports = function(grunt){
 						cwd: './files/',
 						src: [
 							'img/*.*',
-							'main.js',
 							'vendor/**/*.min.*'
 							//'main.css' //main.css already exists in prod
 						],
