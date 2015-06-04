@@ -119,6 +119,19 @@ module.exports = function(grunt){
 					getPostImageElement: function () {
 						var post = grunt.config.get('postData')['posts']['2015-06'];
 						return '<img id="image" src="assets/img/'+post['filename']+'" alt="'+post['title_en']+'" />';
+					},
+					getPostTitle: function() {
+						//TODO: This should better support languages. EN & JP always exist, CN & KR are optional.
+						var post = grunt.config.get('postData')['posts']['2015-06'];
+
+						var title = "";
+						if(post['url'] !== "") {
+							title = '<a href="'+post['url']+'">'+post['title_en']+'</a>';
+						}else{
+							title = post['title_en'];
+						}
+
+						return title;
 					}
 				},
 			},
@@ -227,10 +240,9 @@ module.exports = function(grunt){
 
 	//----------------------------------
 
-
-	grunt.registerTask('load_posts', 'Load posts.json', function(name, val) {
+	grunt.registerTask('load_posts', 'Compile posts.json & artists/*.json', function(name, val) {
 		/* This is mostly a rewritten grunt-concat-json */
-		var stripJsonComments = require('strip-json-comments');
+		var stripJsonComments = require("strip-json-comments");
 		var jsonlint = require("jsonlint");
 
 		var json = {};
