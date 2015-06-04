@@ -150,6 +150,20 @@ module.exports = function(grunt){
 						artist_note = artist_note.trim(); //teim extra tabs from first line.
 
 						return artist_note;
+					},
+					getPostArtistLinks: function() {
+						var post   = grunt.config.get('postData')['posts']['2015-06'],
+						    artist = grunt.config.get('postData')['artists'][post['artist']];
+
+						var artist_links = artist['urls'],
+						    links_arr = [];
+						Object.keys(artist_links).forEach(function(key) {
+							//NOTE: These <a> URLs have no text as it is added via CSS.
+							links_arr.push('<li><span class="a-'+key+'"><a href="'+artist_links[key]+'"></a></span></li>');
+						});
+
+						var link_html = links_arr.join('\n\t\t\t\t\t\t\t\t\t\t');
+						return link_html;
 					}
 				},
 			},
