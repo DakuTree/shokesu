@@ -190,7 +190,7 @@ module.exports = function(grunt){
 
 						var idIndex = keys.indexOf(date);
 						var prevIndex = (idIndex - 1);
-						
+
 						var prevLink = "<span>&nbsp;</span>";
 						if(idIndex !== 0) {
 							var prevKey = keys[prevIndex];
