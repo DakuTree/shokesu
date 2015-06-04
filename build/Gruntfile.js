@@ -138,11 +138,9 @@ module.exports = function(grunt){
 						if(date instanceof Array) date = date[0];
 						var post = grunt.config.get('postData')['posts'][date];
 
-						var title = "";
+						var title = post['title_en'] || post['title_jp'] || '[No Title]';
 						if(post['url'] !== "") {
-							title = '<a href="'+post['url']+'">'+post['title_en']+'</a>';
-						}else{
-							title = post['title_en'];
+							title = '<a href="'+post['url']+'">'+title+'</a>';
 						}
 
 						return title;
