@@ -1,7 +1,18 @@
 module.exports = function(grunt){
 	'use strict';
+
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+
+		/*----------------------------------( STRIP CUSTOM JSON )----------------------------------*/
+
+		stripJsonComments: {
+			dist: {
+				files: {
+					'files/data/posts_nocomments.json': 'files/data/posts.json'
+				}
+			}
+		},
 
 		/*----------------------------------( VERSIONING )----------------------------------*/
 
@@ -197,6 +208,7 @@ module.exports = function(grunt){
 		},
 	});
 
+	grunt.loadNpmTasks('grunt-strip-json-comments');
 	grunt.loadNpmTasks('grunt-bower-task');
 	grunt.loadNpmTasks('grunt-rename');
 	grunt.loadNpmTasks('grunt-contrib-watch');
@@ -218,7 +230,13 @@ module.exports = function(grunt){
 
 	//----------------------------------
 
-	grunt.registerTask('init', []);
+
+	grunt.registerTask('load_posts', 'Load posts.json', function(name, val) {
+		grunt.task.run('stripJsonComments');
+		grunt.config.set('posts', grunt.file.readJSON('files/data/posts_nocomments.json'));
+	});
+
+	grunt.registerTask('init', ['load_posts']);
 	grunt.registerTask('update', ['bower', 'rename']);
 	grunt.registerTask('dev', ['init', 'env:dev', 'clean:dev', 'preprocess:dev', 'copy:dev']);
 	grunt.registerTask('prod', ['init', 'dev', 'env:prod', 'clean:prod', 'less:prod', 'cssmin:prod', 'preprocess:prod', 'copy:prod']);

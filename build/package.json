@@ -23,7 +23,8 @@
 		"grunt-contrib-watch" : "~0",
 		"grunt-rename" : "~0",
 		"grunt-env" : "~0",
-		"grunt-preprocess" : "~4"
+		"grunt-preprocess" : "~4",
+		"grunt-strip-json-comments": "~0"
 	},
 	"scripts" : {
 		"bower" : "grunt bower",

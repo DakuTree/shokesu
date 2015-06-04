@@ -6,6 +6,8 @@ dev/assets/img
 prod/assets/img
 vendor/
 
+*_nocomments.json
+
 #temp ignore
 dev/
 prod/
