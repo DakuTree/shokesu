@@ -13,19 +13,18 @@
 			<footer>
 				<div id='footer-pagenav'>
 					<!-- NOTE: These links are generated, and can be disabled. -->
-					<span id='pagenav-prev'><a href='#'>&larr;</a></span>
-					<span id='pagenav-next'><a href='#'>&rarr;</a></span>
+					<span id='pagenav-prev'><!-- @exec getPostPrev() --></span>
+					<span id='pagenav-next'><!-- @exec getPostNext() --></span>
 				</div>
 
 				<div id='image-info'>
-					<!--Week: <span>47/52</span>-->
 					<div id='image-title'><!-- @exec getPostTitle() --></div>
 					<div id='image-artist'>
 						<div id='image-artist-name'><span id='inline-name'><a href='#modal-show'><!-- @exec getPostArtist() --></a></span></div>
 						<section class="modal--show" id="modal-show" tabindex="-1" role="dialog" aria-labelledby="label-show" aria-hidden="true">
 							<div class="modal-inner">
 								<header><h2 id="label-show"><!-- @exec getPostArtist() --></h2></header>
-								<!-- TODO: Possibly have H3 headers of diff translations of name?, H2 will always be original lang name. -->
+								<!-- TODO: Possibly have H3/4 headers of diff translations of name?, H2 will always be original lang name. -->
 
 								<div class="modal-content">
 									<!-- @exec getPostArtistNote() -->

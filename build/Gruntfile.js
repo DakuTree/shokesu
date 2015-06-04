@@ -176,7 +176,39 @@ module.exports = function(grunt){
 
 						var link_html = links_arr.join('\n\t\t\t\t\t\t\t\t\t\t');
 						return link_html;
-					}
+					},
+					/* http://www.mikedoesweb.com/2014/javascript-object-next-and-previous-keys/ */
+					getPostPrev: function() {
+						var posts = grunt.config.get('postData')['posts'];
+
+						var keys = Object.keys(posts),
+						    idIndex = keys.indexOf('2015-06'),
+						    prevIndex = idIndex -= 1;
+
+						var prevLink = "<span>&nbsp;</span>";
+						if(idIndex !== 0) {
+							var prevKey = keys[prevIndex];
+							prevLink = '<a href="history/'+prevKey+'.html">&larr;</a>';
+						}
+
+						return prevLink;
+					},
+					getPostNext: function() {
+						var posts = grunt.config.get('postData')['posts'];
+
+						var keys = Object.keys(posts),
+						    idIndex = keys.indexOf('2015-06'),
+						    nextIndex = idIndex += 1;
+
+						var nextLink = "<span>&nbsp;</span>";
+						if(nextIndex < keys.length){
+							var nextKey = keys[nextIndex]
+							nextLink = '<a href="history/'+nextKey+'.html">&rarr;</a>';
+						}
+
+						return nextLink;
+
+					},
 				},
 			},
 
