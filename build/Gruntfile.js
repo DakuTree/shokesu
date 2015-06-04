@@ -118,6 +118,18 @@ module.exports = function(grunt){
 					//FIXME: This is currently not built for multiple differnt kinds of posts.
 					//TODO: This should better support languages. EN & JP always exist, CN & KR are optional.
 					//      Currently everything is just being defaulted to EN
+					getPostInfo: function(e) {
+						var post = grunt.config.get('postData')['posts']['2015-06'];
+
+						var info = "";
+						if(typeof post[e] === "undefined") {
+							return false;
+						}else{
+							info = post[e];
+						}
+
+						return info;
+					},
 					getPostImageElement: function () {
 						var post = grunt.config.get('postData')['posts']['2015-06'];
 						return '<img id="image" src="assets/img/'+post['filename']+'" alt="'+post['title_en']+'" />';

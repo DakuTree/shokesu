@@ -1,4 +1,6 @@
 <!-- @include includes/top.html -->
+		<!-- FIXME: BUG. exec doesn't seem to work in included files, so it's here instead :| -->
+		<style>html { background-image: url(./assets/img/<!-- @exec getPostInfo('filename') -->); }</style>
 		<div id="overlay"></div>
 
 		<!-- IDEA: Might get rid of the whole header and just go with a footer similar to what I have at the moment -->
