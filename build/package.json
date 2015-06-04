@@ -14,17 +14,17 @@
 	},
 	"production" : "http://holo.moe",
 	"dependencies" : {
-		"grunt" : "~0",
-		"grunt-bower-task" : "~0",
-		"grunt-contrib-cssmin" : "~0",
-		"grunt-contrib-clean" : "~0",
-		"grunt-contrib-copy" : "~0",
-		"grunt-contrib-less": "~0",
-		"grunt-contrib-watch" : "~0",
-		"grunt-rename" : "~0",
-		"grunt-env" : "~0",
-		"grunt-preprocess" : "~4",
-		"grunt-strip-json-comments": "~0"
+		"grunt" : "latest",
+		"grunt-bower-task" : "latest",
+		"grunt-contrib-cssmin" : "latest",
+		"grunt-contrib-clean" : "latest",
+		"grunt-contrib-copy" : "latest",
+		"grunt-contrib-less": "latest",
+		"grunt-contrib-watch" : "latest",
+		"grunt-rename" : "latest",
+		"grunt-env" : "latest",
+		"grunt-preprocess" : "latest",
+		"grunt-strip-json-comments": "latest"
 	},
 	"scripts" : {
 		"bower" : "grunt bower",
