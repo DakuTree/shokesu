@@ -385,6 +385,6 @@ module.exports = function(grunt){
 	grunt.registerTask('init', ['load_posts']);
 	grunt.registerTask('update', ['bower', 'rename']);
 	grunt.registerTask('dev', ['init', 'env:dev', 'clean:dev', 'preprocess:dev', 'copy:dev']);
-	grunt.registerTask('prod', ['init', 'dev', 'env:prod', 'clean:prod', 'less:prod', 'cssmin:prod', 'preprocess:prod', 'copy:prod']);
+	grunt.registerTask('prod', ['dev', 'env:prod', 'clean:prod', 'less:prod', 'cssmin:prod', 'preprocess:prod', 'copy:prod']);
 	grunt.registerTask('default', ['dev']);
 };
