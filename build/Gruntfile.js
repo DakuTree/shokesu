@@ -116,12 +116,13 @@ module.exports = function(grunt){
 
 					//Post functions
 					//FIXME: This is currently not built for multiple differnt kinds of posts.
+					//TODO: This should better support languages. EN & JP always exist, CN & KR are optional.
+					//      Currently everything is just being defaulted to EN
 					getPostImageElement: function () {
 						var post = grunt.config.get('postData')['posts']['2015-06'];
 						return '<img id="image" src="assets/img/'+post['filename']+'" alt="'+post['title_en']+'" />';
 					},
 					getPostTitle: function() {
-						//TODO: This should better support languages. EN & JP always exist, CN & KR are optional.
 						var post = grunt.config.get('postData')['posts']['2015-06'];
 
 						var title = "";
@@ -132,6 +133,12 @@ module.exports = function(grunt){
 						}
 
 						return title;
+					},
+					getPostArtist: function() {
+						var post   = grunt.config.get('postData')['posts']['2015-06'],
+						    artist = grunt.config.get('postData')['artists'][post['artist']];
+
+						return artist['name_en'];
 					}
 				},
 			},
