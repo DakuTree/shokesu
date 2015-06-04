@@ -6,7 +6,7 @@ dev/assets/img
 prod/assets/img
 vendor/
 
-*_nocomments.json
+compiled.json
 
 #temp ignore
 dev/

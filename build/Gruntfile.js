@@ -4,16 +4,6 @@ module.exports = function(grunt){
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
-		/*----------------------------------( STRIP CUSTOM JSON )----------------------------------*/
-
-		stripJsonComments: {
-			dist: {
-				files: {
-					'files/data/posts_nocomments.json': 'files/data/posts.json'
-				}
-			}
-		},
-
 		/*----------------------------------( VERSIONING )----------------------------------*/
 
 		now: grunt.template.today('yyyymmdd'),
@@ -74,7 +64,7 @@ module.exports = function(grunt){
 			],
 			prod: [
 				'../prod/**/*'
-			],
+			]
 		},
 
 		/*----------------------------------( LESS )----------------------------------*/
@@ -191,6 +181,7 @@ module.exports = function(grunt){
 							'img/*.*',
 							'main.js',
 							'vendor/**/*.min.*'
+							//'main.css' //main.css already exists in prod
 						],
 						dest: '../prod/assets/'
 					},
@@ -208,7 +199,6 @@ module.exports = function(grunt){
 		},
 	});
 
-	grunt.loadNpmTasks('grunt-strip-json-comments');
 	grunt.loadNpmTasks('grunt-bower-task');
 	grunt.loadNpmTasks('grunt-rename');
 	grunt.loadNpmTasks('grunt-contrib-watch');
@@ -232,8 +222,68 @@ module.exports = function(grunt){
 
 
 	grunt.registerTask('load_posts', 'Load posts.json', function(name, val) {
-		grunt.task.run('stripJsonComments');
-		grunt.config.set('posts', grunt.file.readJSON('files/data/posts_nocomments.json'));
+		/* This is mostly a rewritten grunt-concat-json */
+		var stripJsonComments = require('strip-json-comments');
+		var jsonlint = require("jsonlint");
+
+		var json = {};
+		grunt.file.expand({}, ["files/data/**/*.json", "!files/data/compiled.json"]).forEach(function(f) {
+			try {
+				if (!grunt.file.exists(f)) {
+					throw "JSON source file "+f+" not found.";
+				} else {
+					var fragment;
+
+					try {
+						var withComments = grunt.file.read(f),
+						    without = stripJsonComments(withComments),
+						    linted = jsonlint.parse(without);
+
+						fragment = {
+							dir: '',
+							// Attach comment-less JSON
+							json: linted
+						};
+
+						// Start a top level
+						var currentDir = json;
+
+						// Remove the path to the contianer, and the .json extension
+						var path = f.replace(f.base + '/', '').replace('.json', '');
+
+						var test = true;
+						while (test) {
+							var _path = path,
+							    _currentDir = currentDir;
+
+							if(!_currentDir['artists']) _currentDir['artists'] = {};
+							if(!_currentDir['posts'])   _currentDir['posts'] = {};
+
+							// If the is a slash, we have a parent folder
+							var firstSlash = _path.lastIndexOf('/');
+							if (firstSlash > -1) {
+								path = _path.slice(firstSlash + 1);
+								test = true;
+								continue;
+							}
+
+							if(f.indexOf('artists') === -1) {
+								_currentDir[path] = fragment.json;
+							} else {
+								_currentDir['artists'][path] = fragment.json;
+							}
+							test = false;
+						}
+					} catch (e)	{
+						grunt.fail.warn(e);
+					}
+				}
+			} catch (e)	{
+				grunt.fail.warn(e);
+			}
+		});
+
+		grunt.file.write('files/data/compiled.json', JSON.stringify(json, null, '\t'));
 	});
 
 	grunt.registerTask('init', ['load_posts']);
