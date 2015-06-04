@@ -1,36 +1,36 @@
 <!-- @include includes/top.html -->
 		<!-- FIXME: BUG. exec doesn't seem to work in included files, so it's here instead :| -->
-		<style>html { background-image: url(./assets/img/<!-- @exec getPostInfo('filename') -->); }</style>
+		<style>html { background-image: url(./assets/img/<!-- @exec getPostFilename(DATE) -->); }</style>
 		<div id="overlay"></div>
 
 		<!-- IDEA: Might get rid of the whole header and just go with a footer similar to what I have at the moment -->
 		<div id="main">
 			<article>
-				<!-- @exec getPostImageElement() -->
+				<!-- @exec getPostImageElement(DATE) -->
 				<!-- IDEA: We could have the title as a caption below the image. It does make it difficult to include artist links though. -->
 				<!-- IMAGE INFO || ARTIST INFO -->
 			</article>
 			<footer>
 				<div id='footer-pagenav'>
 					<!-- NOTE: These links are generated, and can be disabled. -->
-					<span id='pagenav-prev'><!-- @exec getPostPrev() --></span>
-					<span id='pagenav-next'><!-- @exec getPostNext() --></span>
+					<span id='pagenav-prev'><!-- @exec getPostPrev(DATE) --></span>
+					<span id='pagenav-next'><!-- @exec getPostNext(DATE) --></span>
 				</div>
 
 				<div id='image-info'>
-					<div id='image-title'><!-- @exec getPostTitle() --></div>
+					<div id='image-title'><!-- @exec getPostTitle(DATE) --></div>
 					<div id='image-artist'>
-						<div id='image-artist-name'><span id='inline-name'><a href='#modal-show'><!-- @exec getPostArtist() --></a></span></div>
+						<div id='image-artist-name'><span id='inline-name'><a href='#modal-show'><!-- @exec getPostArtist(DATE) --></a></span></div>
 						<section class="modal--show" id="modal-show" tabindex="-1" role="dialog" aria-labelledby="label-show" aria-hidden="true">
 							<div class="modal-inner">
-								<header><h2 id="label-show"><!-- @exec getPostArtist() --></h2></header>
+								<header><h2 id="label-show"><!-- @exec getPostArtist(DATE) --></h2></header>
 								<!-- TODO: Possibly have H3/4 headers of diff translations of name?, H2 will always be original lang name. -->
 
 								<div class="modal-content">
-									<!-- @exec getPostArtistNote() -->
+									<!-- @exec getPostArtistNote(DATE) -->
 
 									<ul id='image-artist-links'>
-										<!-- @exec getPostArtistLinks() -->
+										<!-- @exec getPostArtistLinks(DATE) -->
 									</ul>
 									<div id='thnks-footer'>
 										<p>Info gathered from Danbooru & my own personal research.</p>

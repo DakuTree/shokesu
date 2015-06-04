@@ -114,28 +114,29 @@ module.exports = function(grunt){
 
 					google_analytics_id: "'UA-30896979-2'",
 
+					DATE: (new Date().getFullYear())+'-'+("0" + (new Date().getMonth() + 1)).slice(-2),
+
 					//Post functions
 					//FIXME: This is currently not built for multiple differnt kinds of posts.
 					//TODO: This should better support languages. EN & JP always exist, CN & KR are optional.
 					//      Currently everything is just being defaulted to EN
-					getPostInfo: function(e) {
-						var post = grunt.config.get('postData')['posts']['2015-06'];
+					//FIXME: Currently date has to be checked if it's an array. Unsure if this is a preprocess or grunt bug.
+					getPostFilename: function(date) {
+						if(date instanceof Array) date = date[0];
+						var post = grunt.config.get('postData')['posts'][date];
 
-						var info = "";
-						if(typeof post[e] === "undefined") {
-							return false;
-						}else{
-							info = post[e];
-						}
+						var info = post['filename'];
 
 						return info;
 					},
-					getPostImageElement: function () {
-						var post = grunt.config.get('postData')['posts']['2015-06'];
+					getPostImageElement: function (date) {
+						if(date instanceof Array) date = date[0];
+						var post = grunt.config.get('postData')['posts'][date];
 						return '<img id="image" src="assets/img/'+post['filename']+'" alt="'+post['title_en']+'" />';
 					},
-					getPostTitle: function() {
-						var post = grunt.config.get('postData')['posts']['2015-06'];
+					getPostTitle: function(date) {
+						if(date instanceof Array) date = date[0];
+						var post = grunt.config.get('postData')['posts'][date];
 
 						var title = "";
 						if(post['url'] !== "") {
@@ -146,14 +147,16 @@ module.exports = function(grunt){
 
 						return title;
 					},
-					getPostArtist: function() {
-						var post   = grunt.config.get('postData')['posts']['2015-06'],
+					getPostArtist: function(date) {
+						if(date instanceof Array) date = date[0];
+						var post   = grunt.config.get('postData')['posts'][date],
 						    artist = grunt.config.get('postData')['artists'][post['artist']];
 
 						return artist['name_en'];
 					},
-					getPostArtistNote: function() {
-						var post   = grunt.config.get('postData')['posts']['2015-06'],
+					getPostArtistNote: function(date) {
+						if(date instanceof Array) date = date[0];
+						var post   = grunt.config.get('postData')['posts'][date],
 						    artist = grunt.config.get('postData')['artists'][post['artist']];
 
 						var artist_note = artist['note_en'];
@@ -163,8 +166,9 @@ module.exports = function(grunt){
 
 						return artist_note;
 					},
-					getPostArtistLinks: function() {
-						var post   = grunt.config.get('postData')['posts']['2015-06'],
+					getPostArtistLinks: function(date) {
+						if(date instanceof Array) date = date[0];
+						var post   = grunt.config.get('postData')['posts'][date],
 						    artist = grunt.config.get('postData')['artists'][post['artist']];
 
 						var artist_links = artist['urls'],
@@ -178,32 +182,35 @@ module.exports = function(grunt){
 						return link_html;
 					},
 					/* http://www.mikedoesweb.com/2014/javascript-object-next-and-previous-keys/ */
-					getPostPrev: function() {
+					getPostPrev: function(date) {
+						if(date instanceof Array) date = date[0];
 						var posts = grunt.config.get('postData')['posts'];
 
-						var keys = Object.keys(posts),
-						    idIndex = keys.indexOf('2015-06'),
-						    prevIndex = idIndex -= 1;
+						var keys = Object.keys(posts);
 
+						var idIndex = keys.indexOf(date);
+						var prevIndex = (idIndex - 1);
+						
 						var prevLink = "<span>&nbsp;</span>";
 						if(idIndex !== 0) {
 							var prevKey = keys[prevIndex];
-							prevLink = '<a href="posts/'+prevKey+'.html">&larr;</a>';
+							prevLink = '<a href="'+prevKey+'.html">&larr;</a>';
 						}
 
 						return prevLink;
 					},
-					getPostNext: function() {
+					getPostNext: function(date) {
+						if(date instanceof Array) date = date[0];
 						var posts = grunt.config.get('postData')['posts'];
 
-						var keys = Object.keys(posts),
-						    idIndex = keys.indexOf('2015-06'),
-						    nextIndex = idIndex += 1;
+						var keys = Object.keys(posts);
+						var idIndex = keys.indexOf(date);
+						var nextIndex = (idIndex + 1);
 
 						var nextLink = "<span>&nbsp;</span>";
 						if(nextIndex < keys.length){
-							var nextKey = keys[nextIndex]
-							nextLink = '<a href="posts/'+nextKey+'.html">&rarr;</a>';
+							var nextKey = keys[nextIndex];
+							nextLink = '<a href="'+nextKey+'.html">&rarr;</a>';
 						}
 
 						return nextLink;
@@ -262,7 +269,8 @@ module.exports = function(grunt){
 						flatten: true,
 						cwd: './files/',
 						src: [
-							'misc/*'
+							'misc/*',
+							'misc/.htaccess'
 						],
 						dest: '../dev/'
 					}
@@ -286,7 +294,8 @@ module.exports = function(grunt){
 						flatten: true,
 						cwd: './files/',
 						src: [
-							'misc/*'
+							'misc/*',
+							'misc/.htaccess'
 						],
 						dest: '../prod/'
 					}
@@ -379,7 +388,31 @@ module.exports = function(grunt){
 		});
 
 		grunt.file.write('files/data/compiled.json', JSON.stringify(json, null, '\t'));
-		grunt.config.set('postData', grunt.file.readJSON('files/data/compiled.json'));
+		grunt.config.set('postData', json);
+
+		var pp_dev  = grunt.config.get('preprocess.dev.files');
+		var pp_prod = grunt.config.get('preprocess.prod.files');
+		for(var k in json['posts']) {
+			var devObj = {
+				options: {
+					context: {
+						'DATE': k
+					}
+				},
+
+				src:  './files/templates/index.html',
+				dest: '', //changed below
+			};
+			var prodObj = JSON.parse(JSON.stringify(devObj)); //JS is stupid.
+
+			devObj['dest']  = '../dev/posts/'+k+'.html';
+			pp_dev.push(devObj);
+
+			prodObj['dest'] = '../prod/posts/'+k+'.html';
+			pp_prod.push(prodObj);
+		}
+		grunt.config.set('preprocess.dev.files',  pp_dev);
+		grunt.config.set('preprocess.prod.files', pp_prod);
 	});
 
 	grunt.registerTask('init', ['load_posts']);
