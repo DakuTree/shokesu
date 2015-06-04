@@ -23,6 +23,7 @@
 						<section class="modal--show" id="modal-show" tabindex="-1" role="dialog" aria-labelledby="label-show" aria-hidden="true">
 							<div class="modal-inner">
 								<header><h2 id="label-show"><!-- @exec getPostArtist() --></h2></header>
+								<!-- TODO: Possibly have H3 headers of diff translations of name?, H2 will always be original lang name. -->
 
 								<div class="modal-content">
 									<!-- @exec getPostArtistNote() -->
@@ -30,7 +31,9 @@
 									<ul id='image-artist-links'>
 										<!-- @exec getPostArtistLinks() -->
 									</ul>
-									<div id='thnks-footer'>Thanks to the folks over @ Danbooru for gathering most of this info.</div>
+									<div id='thnks-footer'>
+										<p>Info gathered from Danbooru & my own personal research.</p>
+									</div>
 								</div>
 							</div>
 
