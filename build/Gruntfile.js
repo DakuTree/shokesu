@@ -284,6 +284,7 @@ module.exports = function(grunt){
 		});
 
 		grunt.file.write('files/data/compiled.json', JSON.stringify(json, null, '\t'));
+		grunt.config.set('imageData', grunt.file.readJSON('files/data/compiled.json'));
 	});
 
 	grunt.registerTask('init', ['load_posts']);
