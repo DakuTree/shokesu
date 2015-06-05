@@ -1,12 +1,6 @@
 # Apache Server Configs v2.11.0 | MIT License
 # https://github.com/h5bp/server-configs-apache
 
-# (!) Using `.htaccess` files slows down Apache, therefore, if you have
-# access to the main server configuration file (which is usually called
-# `httpd.conf`), you should add this logic there.
-#
-# https://httpd.apache.org/docs/current/howto/htaccess.html.
-
 # ######################################################################
 # # CROSS-ORIGIN                                                       #
 # ######################################################################
@@ -942,7 +936,9 @@ FileETag None
 	RewriteRule ^(20[0-9]{2}.*\.html)$ posts/$1 [L]
 </IfModule>
 
-'-- IMAGE CACHING --#
-<FilesMatch "\.(gif|jpe?g|png)$">
-     Header set Cache-Control "max-age=31536000, public, must-revalidate"
-</FilesMatch>
+#-- IMAGE CACHING --#
+<IfModule mod_headers.c>
+	<FilesMatch "\.(gif|jpe?g|png)$">
+		 Header set Cache-Control "max-age=31536000, public, must-revalidate"
+	</FilesMatch>
+</IfModule>
