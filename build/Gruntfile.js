@@ -178,6 +178,33 @@ module.exports = function(grunt){
 						var link_html = links_arr.join('\n\t\t\t\t\t\t\t\t\t\t');
 						return link_html;
 					},
+					getPostRandomFilename: function() {
+						var posts = grunt.config.get('postData')['posts'],
+						    keys = Object.keys(posts);
+
+						var randomDate = keys[Math.floor(Math.random() * keys.length)],
+						    randomPost = posts[randomDate];
+
+						return randomPost['filename'];
+					},
+					getPostHistory: function() {
+						var posts = grunt.config.get('postData')['posts'],
+						    keys = Object.keys(posts);
+
+						//FIXME: This seems like an extremely poor way of doing things.
+						var historyArr = {"2014": ["\t\t\t\t\t<p>Week 1-29</p>\n"], "2015": [], "2016": []};
+						keys.forEach(function(e) {
+							var year = e.substr(0, 4);
+							historyArr[year].push('\t\t\t\t\t<p><a href="./'+e+'.html">'+(year == '2014' ? "Week" : "Month")+' '+e.substr(5)+'</a></p>\n');
+						});
+
+						var history_html = "<h2>2014</h2>\n";
+						historyArr["2014"].forEach(function(e) { history_html += e; });
+						history_html += "\t\t\t\t\t<h2>2015</h2>\n";
+						historyArr["2015"].forEach(function(e) { history_html += e; });
+
+						return history_html;
+					},
 					/* http://www.mikedoesweb.com/2014/javascript-object-next-and-previous-keys/ */
 					getPostPrev: function(date) {
 						if(date instanceof Array) date = date[0];
@@ -223,6 +250,7 @@ module.exports = function(grunt){
 						cwd: './files/templates/',
 						src: [
 							'index.html',
+							'history.html',
 							'!includes/**/*'
 						],
 						dest: '../dev/',
@@ -236,6 +264,7 @@ module.exports = function(grunt){
 						cwd: './files/templates/',
 						src: [
 							'index.html',
+							'history.html',
 							'!includes/**/*'
 						],
 						dest: '../prod/',

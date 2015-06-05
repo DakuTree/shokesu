@@ -1,3 +1,19 @@
 <!-- @include includes/top.html -->
-		HISTORY PAGE
+		<style>html { background-image: url(./assets/img/<!-- @exec getPostRandomFilename() -->); }</style>
+		<div id="overlay"></div>
+
+		<div id="main">
+			<article>
+				<div id='info-block'>
+					<!-- @exec getPostHistory() -->
+				</div>
+			</article>
+			<footer>
+				<div id='footer-nav'>
+					<a href='./'>Home</a> || 
+					<a href='./history.html'>History</a> || 
+					<a href='./about.html'>About</a>
+				</div>
+			</footer>
+		</div>
 <!-- @include includes/bottom.html -->
