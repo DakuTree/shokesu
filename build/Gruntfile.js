@@ -31,6 +31,19 @@ module.exports = function(grunt){
 			}
 		},
 
+		/*----------------------------------( ARCHIVE )----------------------------------*/
+
+		compress: {
+			main: {
+				options: {
+					archive: './files/misc/holo.moe-imgarchive.zip'
+				},
+				files: [
+					{src: ['./files/img/*'],  filter: 'isFile'}
+				]
+			}
+		},
+
 		/*----------------------------------( WATCH )----------------------------------*/
 
 		watch: {
@@ -251,6 +264,7 @@ module.exports = function(grunt){
 						src: [
 							'index.html',
 							'history.html',
+							'about.html',
 							'!includes/**/*'
 						],
 						dest: '../dev/',
@@ -265,6 +279,7 @@ module.exports = function(grunt){
 						src: [
 							'index.html',
 							'history.html',
+							'about.html',
 							'!includes/**/*'
 						],
 						dest: '../prod/',
@@ -330,6 +345,7 @@ module.exports = function(grunt){
 
 	grunt.loadNpmTasks('grunt-bower-task');
 	grunt.loadNpmTasks('grunt-rename');
+	grunt.loadNpmTasks('grunt-contrib-compress');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-env');
 	grunt.loadNpmTasks('grunt-contrib-clean');
@@ -439,7 +455,7 @@ module.exports = function(grunt){
 		grunt.config.set('preprocess.prod.files', pp_prod);
 	});
 
-	grunt.registerTask('init', ['load_posts']);
+	grunt.registerTask('init', ['load_posts', 'compress']);
 	grunt.registerTask('update', ['bower', 'rename']);
 	grunt.registerTask('dev', ['init', 'env:dev', 'clean:dev', 'preprocess:dev', 'copy:dev']);
 	grunt.registerTask('prod', ['dev', 'env:prod', 'clean:prod', 'less:prod', 'cssmin:prod', 'preprocess:prod', 'copy:prod']);

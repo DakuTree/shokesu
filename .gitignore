@@ -6,7 +6,9 @@ dev/assets/img
 prod/assets/img
 vendor/
 
+#compilied files
 compiled.json
+holo.moe-imgarchive.zip
 
 #temp ignore
 dev/
