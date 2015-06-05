@@ -14,5 +14,6 @@
 # TECHNOLOGY COLOPHON
 
 	HTML5, CSS3
-	jQuery, Modernizr, LESS, modal.css
+	Modernizr, LESS, modal.css
 	Grunt, Bower
+	Grunt Modules: grunt-bower-task, grunt-contrib-cssmin, grunt-contrib-clean, grunt-contrib-copy, grunt-contrib-less, grunt-contrib-watch, grunt-rename, grunt-env, grunt-preprocess, grunt-contrib-compress, strip-json-comments, jsonlint
