@@ -12,7 +12,7 @@
 		"name" : "Daku",
 		"url" : "http://codeanimu.net"
 	},
-	"production" : "http://holo.moe",
+	"production" : "http://holo.moe/",
 	"dependencies" : {
 		"grunt" : "latest",
 		"grunt-bower-task" : "latest",
