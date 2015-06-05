@@ -159,17 +159,55 @@ html {
 						text-align: left;
 
 						/* Here we add a bunch of text with CSS. Yay CSS. */
-						.a-homepage:before   { color: black; content: 'Homepage: ' }
-						.a-blog:before       { color: black; content: 'Blog: ' }
-						.a-twitter:before    { color: black; content: 'Twitter: ' }
-						.a-pixiv:before      { color: black; content: 'Pixiv: ' }
-						.a-nijie:before      { color: black; content: 'Nijie: ' }
-						.a-tumblr:before     { color: black; content: 'Tumblr: ' }
-						.a-circlems:before   { color: black; content: 'Circlems: ' }
-						.a-doujinshi:before  { color: black; content: 'Doujinshi: ' }
-						.a-toranoana:before  { color: black; content: 'Toranoana: ' }
-						.a-melonbooks:before { color: black; content: 'Melonbooks: ' }
-							
+						/* Sadly content attr is overwritten, so we have to mess about here */
+
+						[class^="a-"]::before               { color: black; }
+						[class^="a-homepage"]::before       { content: 'Homepage' }
+						[class^="a-blog"]::before           { content: 'Blog' }
+						[class^="a-twitter"]::before        { content: 'Twitter' }
+						[class^="a-twitpic"]::before        { content: 'Twitpic' }
+						[class^="a-yfrog"]::before          { content: 'yFrog' }
+						[class^="a-twipple"]::before        { content: 'Twipple' }
+						[class^="a-pixiv"]::before          { content: 'Pixiv' }
+						[class^="a-nijie"]::before          { content: 'Nijie' }
+						[class^="a-tumblr"]::before         { content: 'Tumblr' }
+						[class^="a-circlems"]::before       { content: 'Circlems' }
+						[class^="a-doujinshi"]::before      { content: 'Doujinshi' }
+						[class^="a-toranoana"]::before      { content: 'Toranoana' }
+						[class^="a-melonbooks"]::before     { content: 'Melonbooks' }
+						[class^="a-wikipedia"]::before      { content: 'Wikipedia' }
+						[class^="a-tinami"]::before         { content: 'Tinami' }
+						[class^="a-googleplus"]::before     { content: 'Google+' }
+						[class^="a-youtube"]::before        { content: 'Youtube' }
+						[class^="a-deviantart"]::before     { content: 'DeviantArt' }
+						[class^="a-amazon"]::before         { content: 'Amazon' }
+						[class^="a-facebook"]::before       { content: 'Facebook' }
+						[class^="a-plurk"]::before          { content: 'Plurk' }
+						[class^="a-hentai-foundry"]::before { content: 'Hentai Foundry' }
+						[class^="a-patreon"]::before        { content: 'Patreon' }
+						[class^="a-mixi"]::before           { content: 'Mixi' }
+						[class^="a-dlsite"]::before         { content: 'DLSite' }
+						[class^="a-dmm"]::before            { content: 'DMM' }
+						[class^="a-drawr"]::before          { content: 'Drawr' }
+						[class^="a-egloos"]::before         { content: 'Egloos' }
+						[class^="a-exblog"]::before         { content: 'Exblog' }
+						[class^="a-comiczin"]::before       { content: 'ComicZin' }
+						[class^="a-mangaoh"]::before        { content: 'Mangaoh' }
+						[class^="a-gamers"]::before         { content: 'Gamers Onlineshop' }
+						[class^="a-baidu"]::before          { content: 'Baidu' }
+						[class^="a-weibo"]::before          { content: 'Weibo' }
+						[class^="a-lofter"]::before         { content: 'Lofter' }
+						[class^="a-stickam"]::before        { content: 'Stickam' }
+
+						[class^="a-"]  #langText::before    { color: black; }
+						[class$="_jp"] #langText::before    { content: ' (JP)' }
+						[class$="_cn"] #langText::before    { content: ' (CN)' }
+						[class$="_kr"] #langText::before    { content: ' (KR)' }
+
+						[class$="_dead"] #langText::before  { color: black; content: ' (Dead)' }
+
+						[class^="a-"] #langText::after      { color: black; content: ': ' }
+
 						a:after {
 							text-decoration: underline;
 							color: black;

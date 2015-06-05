@@ -172,7 +172,7 @@ module.exports = function(grunt){
 						    links_arr = [];
 						Object.keys(artist_links).forEach(function(key) {
 							//NOTE: These <a> URLs have no text as it is added via CSS.
-							links_arr.push('<li><span class="a-'+key+'"><a href="'+artist_links[key]+'"></a></span></li>');
+							links_arr.push('<li><span class="a-'+key.replace('+', 'plus')+'"><span id="langText"></span><a href="'+artist_links[key]+'"></a></span></li>');
 						});
 
 						var link_html = links_arr.join('\n\t\t\t\t\t\t\t\t\t\t');
