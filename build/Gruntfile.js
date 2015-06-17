@@ -392,7 +392,7 @@ module.exports = function(grunt){
 						// Start a top level
 						var currentDir = json;
 
-						// Remove the path to the contianer, and the .json extension
+						// Remove the path to the container, and the .json extension
 						var path = f.replace(f.base + '/', '').replace('.json', '');
 
 						var test = true;
@@ -412,8 +412,21 @@ module.exports = function(grunt){
 							}
 
 							if(f.indexOf('artists') === -1) {
+								//posts
+
+								//Remove posts after current month. Avoids pushing later posts until actual month.
+								//TODO: Make it possible to push posts without having them be accessable on site until actual month.
+								//      This probably isn't possible outside of messing with .htaccess / PHP.
+								//CHECK: Is the most efficent way of doing this? It feels clunky.
+								Object.keys(json['posts']).forEach(function(p){
+									if((new Date(grunt.config.get('preprocess.options.context.DATE'))).getTime() < (new Date(p)).getTime()) {
+										delete fragment.json['posts'][p];
+									}
+								});
+
 								_currentDir[path] = fragment.json;
 							} else {
+								//artists
 								_currentDir['artists'][path] = fragment.json;
 							}
 							test = false;
