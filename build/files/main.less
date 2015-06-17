@@ -76,20 +76,29 @@ html {
 			background-color: rgba(255,255,255,0.8);
 			color: black;
 
-			height: 100%;
-			max-width: 100%;
+			height: ~"calc(100% - 40px)";
+			max-width: ~"calc(100% - 8px)";
 			max-height: 100%;
 
 			display: inline-block;
 
-			& p {
+			padding: 15px 0 15px 0;
+
+			#history-2014, #history-2015 { width: 50%; }
+			#history-2014 { float: left; }
+			#history-2015 { float: right; }
+
+			p {
 				font-size: 11px;
 				margin-top: 0;
 				margin-bottom: 0;
 			}
 		}
 		.about {
-			overflow-y: hidden !important;
+			// overflow-y: hidden !important;
+
+			padding: 0 1em 0 1em !important;
+			max-width: ~"calc(100% - 4em)" !important;
 
 			& h4 { margin-bottom: 6px; }
 			& p, & a { font-size: 14px  !important; }
@@ -97,6 +106,8 @@ html {
 	}
 
 	footer {
+		font-size: 14px;
+
 		position: fixed;
 		bottom: 0;
 		left: 0;
@@ -227,12 +238,17 @@ html {
 					color: grey;
 				}
 			}
-			.modal-close:before { background: rgba(0, 0, 0, 0.5); } /* This is the full-screen overlay that the modal creates */
+			.modal-close:before { background: none !important; } //Remove default modal overlay background. It doesn't work on small resolution.
+			#modal-show {
+				background: rgba(0, 0, 0, 0.5);
+				height: ~"calc(100% - 26px)"; //Hacky fix due to background change. Stops overlay on footer.
+			}
+			#modal-show:focus { outline: 0 } //Using above fix shows outline of modal-show, hide outline.
 			/* This is the close button */
 			.modal-close:after {
 				color: black;
 				background-color: rgba(255,255,255,0.8);
-				padding: 1px 8px 0;
+				padding: 3px 8px 0;
 				border-radius: 2px 2px 0 0;
 			}
 		}

@@ -205,16 +205,17 @@ module.exports = function(grunt){
 						    keys = Object.keys(posts);
 
 						//FIXME: This seems like an extremely poor way of doing things.
-						var historyArr = {"2014": ["\t\t\t\t\t<p>Week 1-29</p>\n"], "2015": [], "2016": []};
+						var historyArr = {"2014": ["\t\t\t\t\t\t<p>Week 1-29</p>\n"], "2015": [], "2016": []};
 						keys.forEach(function(e) {
 							var year = e.substr(0, 4);
-							historyArr[year].push('\t\t\t\t\t<p><a href="./'+e+'.html">'+(year == '2014' ? "Week" : "Month")+' '+e.substr(5)+'</a></p>\n');
+							historyArr[year].push('\t\t\t\t\t\t<p><a href="./'+e+'.html">'+(year == '2014' ? "Week" : "Month")+' '+e.substr(5)+'</a></p>\n');
 						});
 
-						var history_html = "<h2>2014</h2>\n";
+						var history_html = "<div id='history-2014'>\n\t\t\t\t\t\t<h2>2014</h2>\n";
 						historyArr["2014"].forEach(function(e) { history_html += e; });
-						history_html += "\t\t\t\t\t<h2>2015</h2>\n";
+						history_html += "\t\t\t\t\t</div>\n\t\t\t\t\t<div id='history-2015'>\n\t\t\t\t\t\t<h2>2015</h2>\n";
 						historyArr["2015"].forEach(function(e) { history_html += e; });
+						history_html += "\t\t\t\t\t</div>";
 
 						return history_html;
 					},
