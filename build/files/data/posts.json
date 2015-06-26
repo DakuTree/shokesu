@@ -331,5 +331,27 @@
 		"title_jp": "",
 
 		"artist": "duoyuanjun"
+	},
+	"2015-07": {
+		"filename": "21b09cd1e1f7c41f649ef228507acd99.jpg",
+		"type": "image",
+
+		"url": "http://www.pixiv.net/member_illust.php?mode=medium&illust_id=547813",
+		"date": "2008-03-19",
+		"title_en": "",
+		"title_jp": "わっちの安眠法",
+
+		"artist": "nishiwaki"
+	},
+	"2015-08": {
+		"filename": "f8fde5304ad385cb26bcce46b880720e.png",
+		"type": "image",
+
+		"url": "https://twitter.com/ao68_shi/status/551368368729513986",
+		"date": "2015-01-03",
+		"title_en": "",
+		"title_jp": "", //CHECK: Should we just use the tweet?
+
+		"artist": "ao68"
 	}
 }

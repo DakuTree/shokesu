@@ -1,0 +1,13 @@
+{
+	"name_en": "Ao Rokuha", //CHECK: Unsure if we should use ao68 or Ao Rokuha here.
+	"name_jp": "あおろくは",
+
+	"note_en": "Artist.\nNickname: ao68 (reading is given as あおろくは, Ao Rokuha)",
+	"note_jp": "",
+
+	"urls": {
+		"pixiv":   "http://www.pixiv.net/member.php?id=8382154",
+		"tumblr":  "http://ao68.tumblr.com",
+		"twitter": "http://twitter.com/ao68_shi"
+	}
+}
