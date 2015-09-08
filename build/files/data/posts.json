@@ -353,5 +353,16 @@
 		"title_jp": "", //CHECK: Should we just use the tweet?
 
 		"artist": "ao68"
+	},
+	"2015-09": {
+		"filename": "c1ca05699115989c1907ead788ccc5f4.jpg",
+		"type": "image",
+
+		"url": "http://www15.wind.ne.jp/~jekyll-and-hyde/090817.jpg", //DEADLINK
+		"date": "2009-08-17",
+		"title_en": "",
+		"title_jp": "",
+
+		"artist": "mizuki_makoto"
 	}
 }
