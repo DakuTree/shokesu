@@ -23,7 +23,7 @@
 		"grunt-contrib-watch" : "latest",
 		"grunt-rename" : "latest",
 		"grunt-env" : "latest",
-		"grunt-preprocess" : "latest",
+		"grunt-preprocess" : "4.2.0",
 		"grunt-contrib-compress" : "latest",
 
 		"strip-json-comments": "latest",
