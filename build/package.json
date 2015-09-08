@@ -14,20 +14,23 @@
 	},
 	"production" : "http://holo.moe/",
 	"dependencies" : {
-		"grunt" : "latest",
-		"grunt-bower-task" : "latest",
-		"grunt-contrib-cssmin" : "latest",
-		"grunt-contrib-clean" : "latest",
-		"grunt-contrib-copy" : "latest",
-		"grunt-contrib-less": "latest",
-		"grunt-contrib-watch" : "latest",
-		"grunt-rename" : "latest",
-		"grunt-env" : "latest",
-		"grunt-preprocess" : "4.2.0",
-		"grunt-contrib-compress" : "latest",
+		"grunt" : "~0.4.5",
+		"grunt-bower-task" : "~0.4.0",
+		"grunt-contrib-cssmin" : "~0.12.3",
+		"grunt-contrib-clean" : "~0.6.0",
+		"grunt-contrib-copy" : "~0.8.0",
+		"grunt-contrib-less": "~1.0.1",
+		"grunt-contrib-watch" : "~0.6.1",
+		"grunt-rename" : "~0.1.4",
+		"grunt-env" : "~0.4.4",
+		"grunt-preprocess" : "~4.1.0",
+		"grunt-contrib-compress" : "~0.13.0",
 
-		"strip-json-comments": "latest",
-		"jsonlint": "latest"
+		"grunt-ftpush": "~0.3.2",
+		"grunt-open": "~0.2.0",
+
+		"strip-json-comments": "~1.0.2",
+		"jsonlint": "~1.6.2"
 	},
 	"scripts" : {
 		"bower" : "grunt bower",

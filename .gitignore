@@ -6,6 +6,9 @@ dev/
 prod/
 vendor/
 
+.ftppass
+build/.grunt/ftpush/*
+
 #compilied files
 compiled.json
 holo.moe-imgarchive.zip

@@ -342,6 +342,29 @@ module.exports = function(grunt){
 				],
 			},
 		},
+
+		/*----------------------------------( OPEN )----------------------------------*/
+		open : {
+			prod : {
+				path : 'http://holo.moe'
+			}
+		},
+		/*----------------------------------( FTP )----------------------------------*/
+		// Be sure to update the auth.host property to your hostname and update
+		// the .ftppass file with your FTP credentials
+		ftpush : {
+			build : {
+				auth : {
+					host : 'holo.moe',
+					port : 21,
+					authKey : 'key'
+				},
+				src : '../prod/',
+				dest : '/',
+				simple : true,
+				exclusions : ['**.DS_Store']
+			}
+		}
 	});
 
 	grunt.loadNpmTasks('grunt-bower-task');
@@ -354,6 +377,8 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-preprocess');
 	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-ftpush');
+	grunt.loadNpmTasks('grunt-open');
 
 	//----------------------------------
 
@@ -473,5 +498,7 @@ module.exports = function(grunt){
 	grunt.registerTask('update', ['bower', 'rename']);
 	grunt.registerTask('dev', ['init', 'env:dev', 'clean:dev', 'preprocess:dev', 'copy:dev']);
 	grunt.registerTask('prod', ['dev', 'env:prod', 'clean:prod', 'less:prod', 'cssmin:prod', 'preprocess:prod', 'copy:prod']);
+	grunt.registerTask('deploy', ['prod', 'ftpush', 'open:prod']);
 	grunt.registerTask('default', ['dev']);
+
 };
