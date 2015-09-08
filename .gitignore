@@ -2,8 +2,8 @@
 node_modules
 npm-debug.log
 
-dev/assets/img
-prod/assets/img
+dev/
+prod/
 vendor/
 
 #compilied files
