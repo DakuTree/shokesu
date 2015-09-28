@@ -364,5 +364,16 @@
 		"title_jp": "",
 
 		"artist": "mizuki_makoto"
+	},
+	"2015-10": {
+		"filename": "779c639efa6966f2c6c17df92d4ff576.jpg",
+		"type": "image",
+
+		"url": "http://mobile.dengeki.com/detail/a0dc631f-9c03-4b83-ab05-4ed1079c2c00/",
+		"date": "2008-10-XX",
+		"title_en": "Spice & Wolf Illustrations Artbook (Pg.139, Cropped) - Originally cover for 'Dengeki Blitz Punch Ranking'",
+		"title_jp": "", //狼と香辛料―文倉十画集 - DENGEKI電撃パンチランキング (rough title)
+
+		"artist": "ayakura_juu"
 	}
 }
