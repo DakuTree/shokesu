@@ -357,7 +357,7 @@ module.exports = function(grunt){
 				auth : {
 					host : 'holo.moe',
 					port : 21,
-					authKey : 'key'
+					authKey : 'holo'
 				},
 				src : '../prod/',
 				dest : '/',
