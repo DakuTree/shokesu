@@ -5,7 +5,7 @@
 		"less": "2.x",
 
 		"normalize-css": "~3",
-		"css-modal": "latest",
+		"css-modal": "1.4.x",
 		"html5bp": "git@github.com:h5bp/html5-boilerplate.git"
 	},
 	"exportsOverride": {
