@@ -4,7 +4,7 @@ npm-debug.log
 
 dev/
 prod/
-vendor/
+build/files/vendor/
 
 .ftppass
 build/.grunt/ftpush/*
@@ -13,7 +13,7 @@ build/files/data/sites/**/img/*
 
 #compilied files
 compiled.json
-holo.moe-imgarchive.zip
+*-imgarchive.zip
 
 #temp ignore
 TODO.txt

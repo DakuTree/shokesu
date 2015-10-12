@@ -36,10 +36,17 @@ module.exports = function(grunt){
 		compress: {
 			main: {
 				options: {
-					archive: './files/misc/holo.moe-imgarchive.zip'
+					archive: './files/data/sites/<%=site_name%>/misc/<%=site_name%>-imgarchive.zip'
 				},
 				files: [
-					{src: ['./files/img/*'],  filter: 'isFile'}
+					{
+						expand: true,
+						flatten: true,
+						cwd: './files/data/sites/<%=site_name%>/img/',
+						src: ['*.{jpg,png,bmp,gif}', '!README'],
+						dest: '/',
+						filter: 'isFile'
+					}
 				]
 			}
 		},
@@ -420,6 +427,8 @@ module.exports = function(grunt){
 			Object.keys(json).forEach(function(k) {
 				grunt.config.set('preprocess.options.context.'+k, json[k]);
 			});
+			grunt.config.set('site_name', json['site_name']);
+			grunt.config.set('base_url', json['base_url']);
 		}
 
 		//http://stackoverflow.com/a/24594123
