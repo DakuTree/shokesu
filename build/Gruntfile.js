@@ -308,7 +308,8 @@ module.exports = function(grunt){
 						cwd: './files/',
 						src: [
 							'misc/*',
-							'misc/.htaccess'
+							'misc/.htaccess',
+							'data/sites/<%=site_name%>/misc/*'
 						],
 						dest: '../dev/'
 					}
@@ -332,7 +333,8 @@ module.exports = function(grunt){
 						cwd: './files/',
 						src: [
 							'misc/*',
-							'misc/.htaccess'
+							'misc/.htaccess',
+							'data/sites/<%=site_name%>/misc/*'
 						],
 						dest: '../prod/'
 					}
