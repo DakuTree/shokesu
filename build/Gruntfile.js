@@ -201,18 +201,39 @@ module.exports = function(grunt){
 						var posts = grunt.config.get('postData')['posts'],
 						    keys = Object.keys(posts);
 
-						//FIXME: This seems like an extremely poor way of doing things.
-						var historyArr = {"2014": ["\t\t\t\t\t\t<p>Week 1-29</p>\n"], "2015": [], "2016": []};
-						keys.forEach(function(e) {
-							var year = e.substr(0, 4);
-							historyArr[year].push('\t\t\t\t\t\t<p><a href="./'+e+'.html">'+(year == '2014' ? "Week" : "Month")+' '+e.substr(5)+'</a></p>\n');
-						});
+						var historyArr = {},
+						    historyYears = [];
+						if(grunt.config.get('site_name') !== 'holo.moe') {
+							keys.forEach(function(e) {
+								var year = e.substr(0, 4);
+								if(typeof historyArr[year] === "undefined"){
+									historyArr[year] = [];
+									historyYears.push(year);
+								}
 
-						var history_html = "<div id='history-2014'>\n\t\t\t\t\t\t<h2>2014</h2>\n";
-						historyArr["2014"].forEach(function(e) { history_html += e; });
-						history_html += "\t\t\t\t\t</div>\n\t\t\t\t\t<div id='history-2015'>\n\t\t\t\t\t\t<h2>2015</h2>\n";
-						historyArr["2015"].forEach(function(e) { history_html += e; });
-						history_html += "\t\t\t\t\t</div>";
+								historyArr[year].push('\t\t\t\t\t\t<p><a href="./'+e+'.html">Month '+e.substr(5)+'</a></p>\n');
+							});
+						} else {
+							//holo.moe is an irregular case due to it originally being a weekly update thing, rather than monthly.
+							historyArr = {"2014": ["\t\t\t\t\t\t<p>Week 1-29</p>\n"]};
+							historyYears.push("2014");
+							keys.forEach(function(e) {
+								var year = e.substr(0, 4);
+								if(typeof historyArr[year] === "undefined"){
+									historyArr[year] = [];
+									historyYears.push(year);
+								}
+
+								historyArr[year].push('\t\t\t\t\t\t<p><a href="./'+e+'.html">'+(year == '2014' ? "Week" : "Month")+' '+e.substr(5)+'</a></p>\n');
+							});
+						}
+
+						var history_html = "";
+						historyYears.forEach(function(year) {
+							history_html += "<div id='history-"+year+"'>\n\t\t\t\t\t\t<h2>"+year+"</h2>\n";
+							historyArr[year].forEach(function(e) { history_html += e; });
+							history_html += "\t\t\t\t\t</div>\n\t\t\t\t\t";
+						});
 
 						return history_html;
 					},
