@@ -363,6 +363,30 @@ module.exports = function(grunt){
 				simple : true,
 				exclusions : ['**.DS_Store']
 			}
+		},
+
+		/*----------------------------------( robots.txt generation )----------------------------------*/
+		robotstxt: {
+			dist: {
+				//this module is a bit buggy, and sometimes doesn't add new lines
+				dest: 'files/data/sites/<%=site_name%>/misc/',
+				policy: [
+					{
+						host: '<%=base_url%>'
+					},
+					{
+						crawldelay: 100
+					},
+					{
+						sitemap: '<%=base_url%>/sitemap.xml\n\n' //newline is required since ua seems to eat prior \n
+					},
+					{
+						ua: '*',
+						allow: ['index.html', 'about.html', 'history.html'],
+						disallow: '/'
+					}
+				]
+			}
 		}
 	});
 
@@ -378,6 +402,7 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-ftpush');
 	grunt.loadNpmTasks('grunt-open');
+	grunt.loadNpmTasks('grunt-robots-txt');
 
 	//----------------------------------
 
@@ -551,7 +576,7 @@ module.exports = function(grunt){
 		grunt.config.set('preprocess.prod.files', pp_prod);
 	});
 
-	grunt.registerTask('init', ['setup_env', 'load_posts', 'compress']);
+	grunt.registerTask('init', ['setup_env', 'load_posts', 'compress', 'robotstxt']);
 	grunt.registerTask('update', ['bower', 'rename']);
 	grunt.registerTask('dev', ['init', 'env:dev', 'clean:dev', 'preprocess:dev', 'copy:dev']);
 	grunt.registerTask('prod', ['dev', 'env:prod', 'clean:prod', 'less:prod', 'cssmin:prod', 'preprocess:prod', 'copy:prod']);

@@ -10,6 +10,7 @@ build/files/vendor/
 build/.grunt/ftpush/*
 
 build/files/data/sites/**/img/*
+build/files/data/sites/**/misc/robots.txt
 
 #compilied files
 compiled.json
