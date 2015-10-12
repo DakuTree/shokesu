@@ -295,12 +295,20 @@ module.exports = function(grunt){
 						expand: true,
 						cwd: './files/',
 						src: [
-							'img/*.*',
 							'main.less',
 							'vendor/**/*.*',
 							'!vendor/**/*.min.css'
 						],
 						dest: '../dev/assets/'
+					},
+					{
+						expand: true,
+						flatten: true,
+						cwd: './files/',
+						src: [
+							'data/sites/<%=site_name%>/img/*.*'
+						],
+						dest: '../dev/assets/img/'
 					},
 					{
 						expand: true,
@@ -321,11 +329,19 @@ module.exports = function(grunt){
 						expand: true,
 						cwd: './files/',
 						src: [
-							'img/*.*',
 							'vendor/**/*.min.*'
 							//'main.css' //main.css already exists in prod
 						],
 						dest: '../prod/assets/'
+					},
+					{
+						expand: true,
+						flatten: true,
+						cwd: './files/',
+						src: [
+							'data/sites/<%=site_name%>/img/*.*'
+						],
+						dest: '../prod/assets/img/'
 					},
 					{
 						expand: true,
@@ -345,7 +361,7 @@ module.exports = function(grunt){
 		/*----------------------------------( OPEN )----------------------------------*/
 		open : {
 			prod : {
-				path : 'http://holo.moe'
+				path : '<%=base_url%>'
 			}
 		},
 		/*----------------------------------( FTP )----------------------------------*/
@@ -354,9 +370,10 @@ module.exports = function(grunt){
 		ftpush : {
 			build : {
 				auth : {
-					host : 'holo.moe',
-					port : 21,
-					authKey : 'holo'
+					// These are all set via site settings.json
+					// host : '',
+					// port : 21,
+					// authKey : ''
 				},
 				src : '../prod/',
 				dest : '/',
@@ -482,15 +499,25 @@ module.exports = function(grunt){
 				"about_thanks"    : "",
 				"about_copyright" : "",
 
-				"google_analytics_id" : ""
+				"google_analytics_id" : "",
+
+				"ftp_host"    : "",
+				"ftp_port"    : "",
+				"ftp_authkey" : ""
 			};
 			var json = merge_options(jsonDefaults, grunt.file.readJSON(jsonFile));
 
+			//preprocess settings
 			Object.keys(json).forEach(function(k) {
 				grunt.config.set('preprocess.options.context.'+k, json[k]);
 			});
+			//extra settings
 			grunt.config.set('site_name', json['site_name']);
 			grunt.config.set('base_url', json['base_url']);
+
+			grunt.config.set('ftpush.build.auth.host',    json['ftp_host']);
+			grunt.config.set('ftpush.build.auth.port',    json['ftp_port']);
+			grunt.config.set('ftpush.build.auth.authKey', json['ftp_authkey']);
 		}
 
 		//http://stackoverflow.com/a/24594123

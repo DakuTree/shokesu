@@ -11,5 +11,9 @@
 	"about_thanks"    : "Isuna Hasekura for creating such a &lt;3 character, and Ayakura Juu for &lt;3 character designs.",
 	"about_copyright" : "Spice and Wolf is a property of Isuna Hasekura and ASCII Media Works.",
 
-	"google_analytics_id" : "UA-30896979-2"
+	"google_analytics_id" : "UA-30896979-2",
+
+	"ftp_host"    : "holo.moe",
+	"ftp_port"    : "21",
+	"ftp_authkey" : "holo"
 }
