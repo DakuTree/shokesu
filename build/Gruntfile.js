@@ -562,7 +562,7 @@ module.exports = function(grunt){
 		var jsonlint = require("jsonlint");
 
 		var json = {};
-		grunt.file.expand({}, ["files/data/**/*.json", "!files/data/sites/**", "!files/data/compiled.json"]).forEach(function(f) {
+		grunt.file.expand({}, ["files/data/artists/*.json", "files/data/sites/"+grunt.config.get('site_name')+"/posts.json"]).forEach(function(f) {
 			try {
 				if (!grunt.file.exists(f)) {
 					throw "JSON source file "+f+" not found.";
@@ -631,7 +631,7 @@ module.exports = function(grunt){
 			}
 		});
 
-		grunt.file.write('files/data/compiled.json', JSON.stringify(json, null, '\t'));
+		grunt.file.write('files/data/sites/'+grunt.config.get('site_name')+'/compiled.json', JSON.stringify(json, null, '\t'));
 		grunt.config.set('postData', json);
 
 		var pp_dev  = grunt.config.get('preprocess.dev.files');
