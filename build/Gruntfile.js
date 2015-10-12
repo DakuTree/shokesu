@@ -57,12 +57,8 @@ module.exports = function(grunt){
 		/*----------------------------------( ENV )----------------------------------*/
 
 		env: {
-			dev: {
-				NODE_ENV: 'DEVELOPMENT',
-			},
-			prod: {
-				NODE_ENV: 'PRODUCTION',
-			},
+			dev:  { NODE_ENV: 'DEVELOPMENT' },
+			prod: {	NODE_ENV: 'PRODUCTION'  },
 		},
 
 		/*----------------------------------( CLEAN )----------------------------------*/
@@ -71,12 +67,8 @@ module.exports = function(grunt){
 			options: {
 				force: true, // Allows for deletion of folders outside current working dir (CWD). Use with caution.
 			},
-			dev: [
-				'../dev/**/*'
-			],
-			prod: [
-				'../prod/**/*'
-			]
+			dev:  ['../dev/**/*' ],
+			prod: ['../prod/**/*']
 		},
 
 		/*----------------------------------( LESS )----------------------------------*/
@@ -124,11 +116,9 @@ module.exports = function(grunt){
 					ver: '<%= ver %>',
 					version: '<%= pkg.version %>',
 
-					google_analytics_id: "'UA-30896979-2'",
-
 					DATE: (new Date().getFullYear())+'-'+("0" + (new Date().getMonth() + 1)).slice(-2),
 
-					//Post functions
+					/**Post functions**/
 					//FIXME: This is currently not built for multiple differnt kinds of posts.
 					//TODO: This should better support languages. EN & JP always exist, CN & KR are optional.
 					//      Currently everything is just being defaulted to EN
@@ -391,13 +381,65 @@ module.exports = function(grunt){
 
 	//----------------------------------
 
+	grunt.registerTask('setup_env', 'Setup enviroment depending on ARG.', function(name, val) {
+		var fs = require('fs'),
+		    path = require('path');
+
+		/**get site from ARG**/
+		var siteList = getDirectories("files/data/sites/"),
+		    target = grunt.option('site');
+		if(!target) {
+			grunt.fail.fatal("site needs to be specified as an arg (I.E: --site=holo.moe)", 0);
+		} else if(siteList.indexOf(target) === -1) {
+			//site does not exist within siteList
+			grunt.fail.fatal("'"+target+"' does not exist within siteList.\nDid you make sure to create a folder in data/sites?", 0);
+		}
+
+		/** Apply settings.json to preprocess context **/
+		var jsonFile = "files/data/sites/"+target+"/settings.json";
+		if(!grunt.file.exists(jsonFile)) {
+			grunt.fail.fatal("settings.json does not exist in "+jsonFile);
+		} else {
+			var jsonDefaults = {
+				"site_name" : "",
+				"base_url"  : "",
+
+				"site_title"       : "",
+				"site_comment"     : "",
+				"site_description" : "",
+				"site_keywords"    : "",
+
+				"google_analytics_id" : ""
+			};
+			var json = merge_options(jsonDefaults, grunt.file.readJSON(jsonFile));
+
+			Object.keys(json).forEach(function(k) {
+				grunt.config.set('preprocess.options.context.'+k, json[k]);
+			});
+		}
+
+		//http://stackoverflow.com/a/24594123
+		function getDirectories(srcpath) {
+			return fs.readdirSync(srcpath).filter(function(file) {
+				return fs.statSync(path.join(srcpath, file)).isDirectory();
+			});
+		}
+		//http://stackoverflow.com/a/171256
+		function merge_options(obj1,obj2){
+			var obj3 = {};
+			for (var attrname in obj1) { obj3[attrname] = obj1[attrname]; }
+			for (var attrname in obj2) { obj3[attrname] = obj2[attrname]; }
+			return obj3;
+		}
+	});
+
 	grunt.registerTask('load_posts', 'Compile posts.json & artists/*.json', function(name, val) {
 		/* This is mostly a rewritten grunt-concat-json */
 		var stripJsonComments = require("strip-json-comments");
 		var jsonlint = require("jsonlint");
 
 		var json = {};
-		grunt.file.expand({}, ["files/data/**/*.json", "!files/data/compiled.json"]).forEach(function(f) {
+		grunt.file.expand({}, ["files/data/**/*.json", "!files/data/sites/**", "!files/data/compiled.json"]).forEach(function(f) {
 			try {
 				if (!grunt.file.exists(f)) {
 					throw "JSON source file "+f+" not found.";
@@ -494,7 +536,7 @@ module.exports = function(grunt){
 		grunt.config.set('preprocess.prod.files', pp_prod);
 	});
 
-	grunt.registerTask('init', ['load_posts', 'compress']);
+	grunt.registerTask('init', ['setup_env', 'load_posts', 'compress']);
 	grunt.registerTask('update', ['bower', 'rename']);
 	grunt.registerTask('dev', ['init', 'env:dev', 'clean:dev', 'preprocess:dev', 'copy:dev']);
 	grunt.registerTask('prod', ['dev', 'env:prod', 'clean:prod', 'less:prod', 'cssmin:prod', 'preprocess:prod', 'copy:prod']);

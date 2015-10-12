@@ -7,13 +7,14 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<title>Holo~</title> <!-- It's Holo, not Horo! -->
-		<meta name="description" content="A small site devoted to Holo.">
-		<meta name="keywords" content="Holo, Horo, ホロ, Spice & Wolf, S&W, Ookami to Koushinryou, Ōkami to Kōshinryō,  狼と香辛料">
+		<!-- @echo site_comment -->
+		<title><!-- @echo site_title --></title>
+		<meta name="description" content="<!-- @echo site_description -->">
+		<meta name="keywords" content="<!-- @echo site_keywords -->">
 
-		<link rel="canonical" href="http://holo.moe">
+		<link rel="canonical" href="<!-- @echo base_url -->">
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-		<link type="text/plain" rel="author" href="http://holo.moe/humans.txt" />
+		<link type="text/plain" rel="author" href="<!-- @echo base_url -->/humans.txt" />
 
 		<!-- @if NODE_ENV == 'DEVELOPMENT' -->
 		<link rel="stylesheet" href="assets/vendor/css/normalize.css">

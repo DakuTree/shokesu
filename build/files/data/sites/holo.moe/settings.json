@@ -1,0 +1,11 @@
+{
+	"site_name" : "holo.moe",
+	"base_url"  : "http://holo.moe",
+
+	"site_title"       : "Holo~",
+	"site_comment"     : "<!-- It's Holo, not Horo! -->",
+	"site_description" : "A small site devoted to Holo.",
+	"site_keywords"    : "Holo, Horo, ホロ, Spice & Wolf, S&W, Ookami to Koushinryou, Ōkami to Kōshinryō,  狼と香辛料",
+
+	"google_analytics_id" : "UA-30896979-2"
+}
