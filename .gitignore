@@ -11,6 +11,7 @@ build/.grunt/ftpush/*
 
 build/files/data/sites/**/img/*
 build/files/data/sites/**/misc/robots.txt
+build/files/data/sites/**/misc/sitemap.xml
 
 #compilied files
 compiled.json

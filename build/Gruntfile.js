@@ -387,6 +387,40 @@ module.exports = function(grunt){
 					}
 				]
 			}
+		},
+
+		xml_sitemap: {
+			main: {
+				//FIX: sitemap module lacks per file options :|
+				options: {
+					changefreq: 'weekly',
+					dest: 'files/data/sites/<%=site_name%>/misc/',
+					fileName: 'sitemap',
+					siteRoot: '<%=base_url%>',
+					// lastMod: '<%=now%>',
+					priority: '0.8'
+				},
+				files: [
+					{
+						expand: false,
+						flatten: true,
+						cwd: '../dev/',
+						src: [
+							'**/*.html',
+							'!posts/*'
+						]
+					},
+					{
+						//everything in posts/ is rewritten to root url, so we need to trick the module to make it do that..
+						expand: false,
+						flatten: true,
+						cwd: '../dev/posts/',
+						src: [
+							'*.html'
+						]
+					},
+				]
+			}
 		}
 	});
 
@@ -403,6 +437,7 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-ftpush');
 	grunt.loadNpmTasks('grunt-open');
 	grunt.loadNpmTasks('grunt-robots-txt');
+	grunt.loadNpmTasks('grunt-xml-sitemap');
 
 	//----------------------------------
 
@@ -578,7 +613,7 @@ module.exports = function(grunt){
 
 	grunt.registerTask('init', ['setup_env', 'load_posts', 'compress', 'robotstxt']);
 	grunt.registerTask('update', ['bower', 'rename']);
-	grunt.registerTask('dev', ['init', 'env:dev', 'clean:dev', 'preprocess:dev', 'copy:dev']);
+	grunt.registerTask('dev', ['init', 'env:dev', 'clean:dev', 'preprocess:dev', 'xml_sitemap', 'copy:dev']);
 	grunt.registerTask('prod', ['dev', 'env:prod', 'clean:prod', 'less:prod', 'cssmin:prod', 'preprocess:prod', 'copy:prod']);
 	grunt.registerTask('deploy', ['prod', 'ftpush', 'open:prod']);
 	grunt.registerTask('default', ['dev']);
