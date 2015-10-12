@@ -3,7 +3,7 @@
 
 # TEAM
 
-	Avareei (also known as Daku / DakuTree) -- Creator/Admin -- @Avareei
+	Avareei (also known as Daku / DakuTree) -- Creator/Admin -- @DakuTree on Github, @Avareei on Twitter
 
 # THANKS
 
@@ -16,4 +16,4 @@
 	HTML5, CSS3
 	Modernizr, LESS, modal.css
 	Grunt, Bower
-	Grunt Modules: grunt-bower-task, grunt-contrib-cssmin, grunt-contrib-clean, grunt-contrib-copy, grunt-contrib-less, grunt-contrib-watch, grunt-rename, grunt-env, grunt-preprocess, grunt-contrib-compress, strip-json-comments, jsonlint
+	Grunt Modules: grunt-bower-task, grunt-contrib-cssmin, grunt-contrib-clean, grunt-contrib-copy, grunt-contrib-less, grunt-contrib-watch, grunt-rename, grunt-env, grunt-preprocess, grunt-contrib-compress, strip-json-comments, jsonlint, grunt-robots-txt, grunt-xml-sitemap
