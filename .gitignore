@@ -9,6 +9,8 @@ vendor/
 .ftppass
 build/.grunt/ftpush/*
 
+build/files/data/sites/**/img/*
+
 #compilied files
 compiled.json
 holo.moe-imgarchive.zip
@@ -17,3 +19,4 @@ holo.moe-imgarchive.zip
 TODO.txt
 
 #allow
+!build/files/data/sites/**/img/README
