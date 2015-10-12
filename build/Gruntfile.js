@@ -409,6 +409,10 @@ module.exports = function(grunt){
 				"site_description" : "",
 				"site_keywords"    : "",
 
+				"about_media"     : "",
+				"about_thanks"    : "",
+				"about_copyright" : "",
+
 				"google_analytics_id" : ""
 			};
 			var json = merge_options(jsonDefaults, grunt.file.readJSON(jsonFile));
