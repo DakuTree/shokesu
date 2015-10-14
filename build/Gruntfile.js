@@ -468,7 +468,7 @@ module.exports = function(grunt){
 				options: {
 					width: '', //no resize
 					height: '', //no resize
-					overwrite: true,
+					overwrite: false,
 					quality: 0.94
 				},
 				files : {}
