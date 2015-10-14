@@ -23,7 +23,9 @@
 		"jsonlint": "~1.6.2",
 
 		"grunt-robots-txt"  : "~0.3.0",
-		"grunt-xml-sitemap" : "~0.2.0"
+		"grunt-xml-sitemap" : "~0.2.0",
+
+		"grunt-image-resize" : "~1.0.0"
 	},
 	"scripts" : {
 		"bower" : "grunt bower",

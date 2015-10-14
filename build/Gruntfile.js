@@ -43,7 +43,7 @@ module.exports = function(grunt){
 						expand: true,
 						flatten: true,
 						cwd: './files/data/sites/<%=site_name%>/img/',
-						src: ['*.{jpg,png,bmp,gif}', '!README'],
+						src: ['*.{jpg,png,bmp,gif}', '!README', '!sample-*'],
 						dest: '/',
 						filter: 'isFile'
 					}
@@ -134,14 +134,16 @@ module.exports = function(grunt){
 						if(date instanceof Array) date = date[0];
 						var post = grunt.config.get('postData')['posts'][date];
 
-						var info = post['filename'];
+						var info = post['sample_filename'] || post['filename'];
 
 						return info;
 					},
 					getPostImageElement: function (date) {
 						if(date instanceof Array) date = date[0];
 						var post = grunt.config.get('postData')['posts'][date];
-						return '<img id="image" src="assets/img/'+post['filename']+'" alt="'+post['title_en']+'" />';
+						return '<a href="assets/img/'+post['filename']+'">'+
+							       '<img id="image" src="assets/img/'+(post['filename_sample'] || post['filename'])+'" alt="'+encodeURI(post['title_en'] || post['title_jp'] || '[No Title]')+'" />'+
+								'</a>';
 					},
 					getPostTitle: function(date) {
 						if(date instanceof Array) date = date[0];
@@ -195,7 +197,7 @@ module.exports = function(grunt){
 						var randomDate = keys[Math.floor(Math.random() * keys.length)],
 						    randomPost = posts[randomDate];
 
-						return randomPost['filename'];
+						return randomPost['sample_filename'] || randomPost['filename'];
 					},
 					getPostHistory: function() {
 						var posts = grunt.config.get('postData')['posts'],
@@ -459,6 +461,19 @@ module.exports = function(grunt){
 					},
 				]
 			}
+		},
+
+		image_resize: {
+			main: {
+				options: {
+					width: '', //no resize
+					height: '', //no resize
+					overwrite: true,
+					quality: 0.94
+				},
+				files : {}
+				//files are added via sample_images task
+			}
 		}
 	});
 
@@ -476,6 +491,7 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-open');
 	grunt.loadNpmTasks('grunt-robots-txt');
 	grunt.loadNpmTasks('grunt-xml-sitemap');
+	grunt.loadNpmTasks('grunt-image-resize');
 
 	//----------------------------------
 
@@ -659,7 +675,28 @@ module.exports = function(grunt){
 		grunt.config.set('preprocess.prod.files', pp_prod);
 	});
 
-	grunt.registerTask('init', ['setup_env', 'load_posts', 'compress', 'robotstxt']);
+	grunt.registerTask('generate_samples', 'Generate sample images if needed.', function(name, val) {
+		var fs = require("fs");
+
+		var sampleImages = {};
+		var postsData = grunt.config.get('postData');
+		Object.keys(postsData['posts']).forEach(function(post) {
+			var stats = fs.statSync('files/data/sites/'+grunt.config.get('site_name')+'/img/'+postsData['posts'][post]['filename']);
+
+			//if image > 1MB, generate sample
+			if((stats['size'] / 1000000) > 1) {
+				var sampleFilename = postsData['posts'][post]['filename'].replace(/\.png/, '.jpg'); //PNG is the main cause of big filesizes.
+				sampleImages['files/data/sites/'+grunt.config.get('site_name')+'/img/'+sampleFilename] = 'files/data/sites/'+grunt.config.get('site_name')+'/img/'+postsData['posts'][post]['filename'];
+				postsData['posts'][post]['filename_sample'] = sampleFilename;
+			}
+		});
+		grunt.config.set('postData', postsData);
+		grunt.config.set('image_resize.main.files', sampleImages);
+
+		grunt.task.run('image_resize');
+	});
+
+	grunt.registerTask('init', ['setup_env', 'load_posts', 'generate_samples', 'compress', 'robotstxt']);
 	grunt.registerTask('update', ['bower', 'rename']);
 	grunt.registerTask('dev', ['init', 'env:dev', 'clean:dev', 'preprocess:dev', 'xml_sitemap', 'copy:dev']);
 	grunt.registerTask('prod', ['dev', 'env:prod', 'clean:prod', 'less:prod', 'cssmin:prod', 'preprocess:prod', 'copy:prod']);
