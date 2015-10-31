@@ -199,6 +199,25 @@ module.exports = function(grunt){
 
 						return randomPost['sample_filename'] || randomPost['filename'];
 					},
+					getPostAnnouncement: function(date) {
+						var post         = grunt.config.get('postData')['posts'][date],
+						    announcement = post['announcement'] || '',
+							html         = "";
+
+						if(announcement !== '') {
+							html = '<div class="ribbon">'+
+							       '	<div class="ribbon-stitches-top"></div>'+
+								   '	<strong class="ribbon-content">'+
+								   '		<h1>'+announcement+'</h1>'+
+								   '	</strong>'+
+								   '	<div class="ribbon-stitches-bottom"></div>'+
+								   '</div>'+
+								   '<div style="margin-bottom: 10px;">&nbsp;</div>'+
+								   '<style>#image { max-height: calc(100% - 28px) !important; }</style>';
+						}
+
+						return html;
+					},
 					getPostHistory: function() {
 						var posts = grunt.config.get('postData')['posts'],
 						    keys = Object.keys(posts);

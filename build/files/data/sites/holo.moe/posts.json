@@ -375,5 +375,18 @@
 		"title_jp": "", //狼と香辛料―文倉十画集 - DENGEKI電撃パンチランキング (rough title)
 
 		"artist": "ayakura_juu"
+	},
+	"2015-11": {
+		"filename": "a0fda7c9c92713d1611f9c891ac4d2ef.jpg",
+		"type": "image",
+
+		"url": "http://www.pixiv.net/member_illust.php?mode=medium&illust_id=27735749",
+		"date": "2012-06-04",
+		"title_en": "",
+		"title_jp": "俺の嫁がこんなに可愛いわけがない",
+
+		"artist": "tmg",
+
+		"announcement" : "Just launched <a href='http://ruri.moe'>ruri.moe</a>! Have a look!~"
 	}
 }
