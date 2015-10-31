@@ -123,7 +123,7 @@ module.exports = function(grunt){
 					ver: '<%= ver %>',
 					version: '<%= pkg.version %>',
 
-					DATE: (new Date().getFullYear())+'-'+("0" + (new Date().getMonth() + 1)).slice(-2),
+					DATE: (new Date().getFullYear())+'-'+("0" + (new Date().getMonth() + 2)).slice(-2),
 
 					/**Post functions**/
 					//FIXME: This is currently not built for multiple differnt kinds of posts.
