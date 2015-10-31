@@ -1,0 +1,13 @@
+{
+	"2015-11": {
+		"filename": "0180232e10729ec3a293a498e4aabf43.jpg",
+		"type": "image",
+
+		"url": "http://www.pixiv.net/member_illust.php?mode=medium&illust_id=11126617",
+		"date": "2010/06/07",
+		"title_en": "Black Triangle", //CHECK: Is this correct? I'm always wary to trust GT, yet my own translation returns the same results..
+		"title_jp": "黒い三角形",
+
+		"artist": "ryo"
+	}
+}

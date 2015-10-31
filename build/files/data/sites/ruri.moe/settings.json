@@ -1,0 +1,19 @@
+{
+	"site_name" : "ruri.moe",
+	"base_url"  : "http://ruri.moe",
+
+	"site_title"       : "Ruri~",
+	"site_comment"     : "",
+	"site_description" : "A small site devoted to Gokou Ruri.",
+	"site_keywords"    : "Gokou Ruri, Ruri, Kuroneko, Shironeko, Kamineko, Yamineko, Oreimo, Ore no Imouto, Ore no Imouto ga Konnani Kawaii Wake ga Nai, 瑠璃, 五更 瑠璃, 黒猫",
+
+	"about_media"     : "I wanted to showcase various media of the character Gokou Ruri (Kuroneko) while doing something a bit different than the standard image blog.<br/>Sadly kuroneko.moe is taken for at least another year, so ruri.moe it is.",
+	"about_thanks"    : "Tsukasa Fushimi for creating such a &lt;3 character, and Hiro Kanzaki for &lt;3 character designs.",
+	"about_copyright" : "Ore no Imouto ga Konnani Kawaii Wake ga Nai is a property of Tsukasa Fushimi and ASCII Media Works.",
+
+	"google_analytics_id" : "UA-30896979-5",
+
+	"ftp_host"    : "ruri.moe",
+	"ftp_port"    : "21",
+	"ftp_authkey" : "ruri"
+}

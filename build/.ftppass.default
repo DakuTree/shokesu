@@ -2,5 +2,9 @@
 	"holo": {
 		"username": "",
 		"password": ""
+	},
+	"ruri": {
+		"username": "",
+		"password": ""
 	}
 }

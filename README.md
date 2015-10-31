@@ -3,8 +3,8 @@
 It was originally built specifically for [holo.moe](http://holo.moe) (The repo was also called holo.moe!), but after grabbing another interesting domain, multi-site support was added & the name had to be changed.
 
 #### Current Sites
-* **[holo.moe](http://holo.moe)** - Holo from Spice and Wolf
-* ~~**[????.moe](http://????.moe)** - ???~~
+* **[holo.moe](http://holo.moe)** - "Holo" from "Spice and Wolf"
+* **[ruri.moe](http://ruri.moe)** - "Gokou Ruri" (more commonly known as Kuroneko) from "Ore no Imouto ga Konnani Kawaii Wake ga Nai"
 
 ## how to build
 * cd build/
