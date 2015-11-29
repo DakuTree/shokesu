@@ -9,5 +9,29 @@
 		"title_jp": "黒い三角形",
 
 		"artist": "ryo"
-	}
+	},
+	"2015-12": {
+		"filename": "697057e285095b6681ae0dfd7ee3f65f.png",
+		"type": "image",
+
+		//Original post was deleted.
+		"url": "http://www.pixiv.net/member_illust.php?mode=medium&illust_id=15372864",
+		"date": "",
+		"title_en": "Happy New Year",
+		"title_jp": "賀正黒猫",
+
+		"artist": "aoi_usagi"
+	}/*,
+	"2016-01": {
+		"filename": "b21dbb7354085b8dec374a05fe2e36eb.jpg",
+		"type": "image",
+
+		//original post was deleted
+		"url": "http://www.pixiv.net/member_illust.php?mode=medium&illust_id=15614795",
+		"date": "",
+		"title_en": "",
+		"title_jp": "",
+
+		"artist": "matsuryuu"
+	}*/
 }

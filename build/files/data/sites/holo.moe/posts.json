@@ -388,5 +388,29 @@
 		"artist": "tmg",
 
 		"announcement" : "Just launched <a href='http://ruri.moe'>ruri.moe</a>! Have a look!~"
-	}
+	},
+	"2015-12": {
+		"filename": "4301d5f970c5f2740bb01cb3c3318d70.jpg",
+		"type": "image",
+
+		"url": "http://www.pixiv.net/member_illust.php?mode=medium&illust_id=24456356",
+		"date": "2012-01-18",
+		"title_en": "",
+		"title_jp": "私と友人の共同作品 其一", //This image is apparently colored, but I can't seem to translate the original artists name..
+
+		"artist": "misideluting",
+
+		"announcement" : "Just launched <a href='http://ruri.moe'>ruri.moe</a>! Have a look!~"
+	}/*,
+	"2016-01": {
+		"filename": "6fc49dde2673129b61171aa9d6761f0c.png",
+		"type": "image",
+
+		"url": "http://sheepfold.deviantart.com/art/Commission-Horo-Background-001-526383618",
+		"date": "2015-04-11",
+		"title_en": "[Commission:] Horo Background 001",
+		"title_jp": "",
+
+		"artist": "sheepfold"
+	}*/
 }
