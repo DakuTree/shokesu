@@ -28,11 +28,13 @@
 		"grunt-image-resize" : "~1.0.0"
 	},
 	"scripts" : {
-		"bower" : "grunt bower",
-		"dev" : "grunt",
-		"grunt" : "grunt",
-		"prod" : "grunt prod",
-		"watch" : "grunt watch",
-		"update" : "grunt bower rename"
+		"bower"  : "grunt bower",
+		"dev"    : "grunt",
+		"grunt"  : "grunt",
+		"prod"   : "grunt prod",
+		"watch"  : "grunt watch",
+		"update" : "grunt bower rename",
+
+		"postinstall" : "patch < patches\\preprocess.patch -p1"
 	}
 }

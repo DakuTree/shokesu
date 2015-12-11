@@ -1,0 +1,7 @@
+--- a/node_modules/grunt-preprocess/tasks/preprocess.js
++++ b/node_modules/grunt-preprocess/tasks/preprocess.js
+@@ -58 +58,3 @@
+-        var processed = preprocess.preprocess(srcText, context, getExtension(src));
++        var tmp_context = context;
++        if(fileObj.options && fileObj.options.context) tmp_context = _.merge(context, fileObj.options.context);
++        var processed = preprocess.preprocess(srcText, tmp_context, getExtension(src));
