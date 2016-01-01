@@ -401,7 +401,7 @@
 		"artist": "misideluting",
 
 		"announcement" : "Just launched <a href='http://ruri.moe'>ruri.moe</a>! Have a look!~"
-	}/*,
+	},
 	"2016-01": {
 		"filename": "6fc49dde2673129b61171aa9d6761f0c.png",
 		"type": "image",
@@ -412,5 +412,5 @@
 		"title_jp": "",
 
 		"artist": "sheepfold"
-	}*/
+	}
 }
