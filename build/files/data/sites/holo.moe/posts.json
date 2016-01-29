@@ -412,5 +412,38 @@
 		"title_jp": "",
 
 		"artist": "sheepfold"
-	}
+	},
+	"2016-02": {
+		"filename": "f79d4b833b81c32ad73e80edff4587a6.jpg",
+		"type": "image",
+
+		"url": "http://pds.exblog.jp/pds/1/200802/14/20/a0079720_22512693.jpg",
+		"date": "2008-02-14",
+		"title_en": "Happy Valentine",
+		"title_jp": "",
+
+		"artist": "zinno"
+	}/*,
+	"2016-03": {
+		"filename": "280b2ad639e58a0454e50baaa3925a9a.jpg",
+		"type": "image",
+
+		"url": "http://www.pixiv.net/member_illust.php?mode=medium&illust_id=3824635",
+		"date": "2009-04-11",
+		"title_en": "Untitled",
+		"title_jp": "無題",
+
+		"artist": "toto_(mockingbird)"
+	},
+	"2016-04": {
+		"filename": "d947363af6c14631f0dfc44d079230f6.jpg",
+		"type": "image",
+
+		"url": "http://spicy-wolf.com/original/visualnovel.html",
+		"date": "2009-04-30",
+		"title_en": "Spice & Wolf Illustrations Artbook (Pg.154, Cropped) - Originally cover for the book included with the Limited Edition version of the S2 OVA 'The Wolf and the Amber Melancholy'.",
+		"title_jp": "",
+
+		"artist": "ayakura_juu"
+	}*/
 }

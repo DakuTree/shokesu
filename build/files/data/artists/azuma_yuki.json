@@ -1,0 +1,19 @@
+{
+	"name_en": "Azuma Yuki",
+	"name_jp": "あずまゆき",
+
+	"note_en": "Artist.",
+	"note_jp": "",
+
+	"urls": {
+		"homepage": "http://azumayuki.com/",
+		"blog":     "http://blog.azumayuki.com/",
+		"pixiv":    "http://www.pixiv.net/member.php?id=3473767",
+		"seiga":    "http://seiga.nicovideo.jp/user/illust/43534430?target=illust_all",
+		
+		"twitter":  "http://twitter.com/yuki_azuma",
+		"twitpic":  "http://twitpic.com/photos/yuki_azuma",
+		"twipple":  "http://p.twipple.jp/user/yuki_azuma",
+		"doujinshi": "http://doujinshi.org/author/393/Azuma-Yuki/"
+	}
+}
