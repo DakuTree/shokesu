@@ -423,7 +423,7 @@
 		"title_jp": "",
 
 		"artist": "zinno"
-	}/*,
+	},
 	"2016-03": {
 		"filename": "280b2ad639e58a0454e50baaa3925a9a.jpg",
 		"type": "image",
@@ -434,7 +434,7 @@
 		"title_jp": "無題",
 
 		"artist": "toto_(mockingbird)"
-	},
+	}/*,
 	"2016-04": {
 		"filename": "d947363af6c14631f0dfc44d079230f6.jpg",
 		"type": "image",
