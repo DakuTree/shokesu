@@ -13,7 +13,5 @@
 
 	"google_analytics_id" : "UA-30896979-5",
 
-	"ftp_host"    : "ruri.moe",
-	"ftp_port"    : "21",
-	"ftp_authkey" : "ruri"
+	"git_url" : "ssh://deploy@192.168.0.5:22022/var/www/ruri.moe"
 }

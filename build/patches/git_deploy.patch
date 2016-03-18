@@ -1,0 +1,13 @@
+--- a/node_modules/grunt-git-deploy/tasks/git_deploy.js
++++ b/node_modules/grunt-git-deploy/tasks/git_deploy.js
+@@ -35 +35 @@
+-    var deployDir = 'tmp/' + pkg.name;
++    var deployDir = 'tmp/' + (options.site ? options.site + "/" : "") + pkg.name;
+@@ -70 +70 @@
+-                grunt.file.delete(dest);
++                // grunt.file.delete(dest);
+@@ -93,0 +94 @@
++	grunt.file.delete( deployDir );
+@@ -95,2 +95,0 @@
+-
+-    grunt.file.delete(path.join(src, '.git'));

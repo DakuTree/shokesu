@@ -16,7 +16,7 @@
 		"grunt-preprocess" : "~4.1.0",
 		"grunt-contrib-compress" : "~0.13.0",
 
-		"grunt-ftpush" : "~0.3.2",
+		"grunt-git-deploy" : "0.3.0",
 		"grunt-open"   : "~0.2.0",
 
 		"strip-json-comments": "~1.0.2",
@@ -35,6 +35,7 @@
 		"watch"  : "grunt watch",
 		"update" : "grunt bower rename",
 
-		"postinstall" : "patch < patches\\preprocess.patch -p1"
+		"postinstall" : "patch < patches\\preprocess.patch -p1",
+		"postinstall" : "patch < patches\\git_deploy.patch -p1"
 	}
 }

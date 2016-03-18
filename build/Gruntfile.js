@@ -406,22 +406,16 @@ module.exports = function(grunt){
 				path : '<%=base_url%>'
 			}
 		},
-		/*----------------------------------( FTP )----------------------------------*/
-		// Be sure to update the auth.host property to your hostname and update
-		// the .ftppass file with your FTP credentials
-		ftpush : {
-			build : {
-				auth : {
-					// These are all set via site settings.json
-					// host : '',
-					// port : 21,
-					// authKey : ''
+
+		/*----------------------------------( Git Deploy )----------------------------------*/
+		git_deploy: {
+			deploy: {
+				options: {
+					branch: 'master',
+					url: "" //this is set via site settings.jsons
 				},
-				src : '../prod/',
-				dest : '/',
-				simple : true,
-				exclusions : ['**.DS_Store']
-			}
+				src : '../prod/'
+			},
 		},
 
 		/*----------------------------------( robots.txt generation )----------------------------------*/
@@ -506,7 +500,7 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-preprocess');
 	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.loadNpmTasks('grunt-ftpush');
+	grunt.loadNpmTasks('grunt-git-deploy');
 	grunt.loadNpmTasks('grunt-open');
 	grunt.loadNpmTasks('grunt-robots-txt');
 	grunt.loadNpmTasks('grunt-xml-sitemap');
@@ -571,9 +565,8 @@ module.exports = function(grunt){
 			grunt.config.set('site_name', json['site_name']);
 			grunt.config.set('base_url', json['base_url']);
 
-			grunt.config.set('ftpush.build.auth.host',    json['ftp_host']);
-			grunt.config.set('ftpush.build.auth.port',    json['ftp_port']);
-			grunt.config.set('ftpush.build.auth.authKey', json['ftp_authkey']);
+			grunt.config.set('git_deploy.deploy.options.site', json['site_name']);
+			grunt.config.set('git_deploy.deploy.options.url', json['git_url']);
 		}
 
 		//http://stackoverflow.com/a/24594123
@@ -719,7 +712,7 @@ module.exports = function(grunt){
 	grunt.registerTask('update', ['bower', 'rename']);
 	grunt.registerTask('dev', ['init', 'env:dev', 'clean:dev', 'preprocess:dev', 'xml_sitemap', 'copy:dev']);
 	grunt.registerTask('prod', ['dev', 'env:prod', 'clean:prod', 'less:prod', 'cssmin:prod', 'preprocess:prod', 'copy:prod']);
-	grunt.registerTask('deploy', ['prod', 'ftpush', 'open:prod']);
+	grunt.registerTask('deploy', ['prod', 'git_deploy', 'open:prod']);
 	grunt.registerTask('default', ['dev']);
 
 };

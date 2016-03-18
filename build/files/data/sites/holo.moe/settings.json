@@ -13,7 +13,5 @@
 
 	"google_analytics_id" : "UA-30896979-2",
 
-	"ftp_host"    : "holo.moe",
-	"ftp_port"    : "21",
-	"ftp_authkey" : "holo"
+	"git_url" : "ssh://deploy@holo.moe:22022/var/www/holo.moe"
 }
