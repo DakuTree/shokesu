@@ -55,7 +55,7 @@
 		"title_jp": "くろねこしー",
 
 		"artist": "sora_to_umi"
-	}/*,
+	},
 	"2016-04": {
 		"filename": "784e9f8d4e45fee993df34837b2c569f.jpg",
 		"type": "image",
@@ -66,5 +66,49 @@
 		"title_jp": "くろねこさん",
 
 		"artist": "haiiro"
-	}*/
+	},
+	"2016-05": {
+		"filename": "7bff3f6328d128d6da0c77a84829f1f2.jpg",
+		"type": "image",
+
+		"url": "http://www.pixiv.net/member_illust.php?mode=medium&illust_id=14896488",
+		"date": "2010/11/30",
+		"title_en": "",
+		"title_jp": "なんだか疲れてしまったわ。足をもんで頂戴？",
+
+		"artist": "sakino_shingetsu"
+	},
+	"2016-06": {
+		"filename": "b3a44cd89d57b3db953c2778aab444a1.jpg",
+		"type": "image",
+
+		"url": "http://www.pixiv.net/member_illust.php?mode=medium&illust_id=16546217",
+		"date": "2011/02/10",
+		"title_en": "",
+		"title_jp": "黒猫",
+
+		"artist": "lvans"
+	},
+	"2016-07": {
+		"filename": "89f21adee9b1f654ae6ac7b3ebdf500d.png",
+		"type": "image",
+
+		"url": "http://www.pixiv.net/member_illust.php?mode=medium&illust_id=57524390",
+		"date": "2016/06/21",
+		"title_en": "",
+		"title_jp": "猫詰め",
+
+		"artist": "herunin"
+	},
+	"2016-08": {
+		"filename": "6796b9e5f95f9759a29f2b3491f52b6f.jpg",
+		"type": "image",
+
+		"url": "",
+		"date": "2014/06/XX",
+		"title_en": "Hiro Kanzaki Pictures Collection [Cute] Oreimo & 1999-2007 Art Works",
+		"title_jp": "",
+
+		"artist": "kanzaki_hiro"
+	}
 }

@@ -434,7 +434,7 @@
 		"title_jp": "無題",
 
 		"artist": "toto_(mockingbird)"
-	}/*,
+	},
 	"2016-04": {
 		"filename": "d947363af6c14631f0dfc44d079230f6.jpg",
 		"type": "image",
@@ -445,5 +445,49 @@
 		"title_jp": "",
 
 		"artist": "ayakura_juu"
-	}*/
+	},
+	"2016-05": {
+		"filename": "dc38e18380433baac31cad0863d67589.jpg",
+		"type": "image",
+
+		"url": "http://tomohiro-kouda.sblo.jp/archives/200803-1.html",
+		"date": "2008/03/04",
+		"title_en": "",
+		"title_jp": "",
+
+		"artist": "kouda_tomohiro"
+	},
+	"2016-06": {
+		"filename": "d065dbf00711cdaddac14ad8597e4460.jpg",
+		"type": "image",
+
+		"url": "http://www.pixiv.net/member_illust.php?mode=medium&illust_id=19348793",
+		"date": "2011/06/03",
+		"title_en": "",
+		"title_jp": "わっちの林檎",
+
+		"artist": "trench_(artist)"
+	},
+	"2016-07": {
+		"filename": "11cd6ba9a2e411caecc6c8af021161a4.png",
+		"type": "image",
+
+		"url": "https://twitter.com/kawakamirokkaku/status/659074914998095872",
+		"date": "2015/08/27",
+		"title_en": "Holo (Practice)",
+		"title_jp": "ホロ練",
+
+		"artist": "kawakami_rokkaku"
+	},
+	"2016-08": {
+		"filename": "b8640863e857b8e25fe87cbf71bb0139.jpg",
+		"type": "image",
+
+		"url": "http://www.pixiv.net/member_illust.php?mode=medium&illust_id=55461118",
+		"date": "2016/02/24",
+		"title_en": "Holo",
+		"title_jp": "赫萝",
+
+		"artist": "q9q"
+	}
 }
