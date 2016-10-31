@@ -495,21 +495,87 @@
 		"type": "image",
 
 		"url": "http://www.pixiv.net/member_illust.php?mode=medium&illust_id=58280643l",
-		"date": "2016-08-06",
+		"date": "2016/08/06",
 		"title_en": "",
 		"title_jp": "ㄠ嗚~~~~~", //CHECK: Is then even JP?
 
 		"artist": "baraba_baba"
-	}/*,
+	},
 	"2016-10": {
 		"filename": "ec756cad400d57233b1004ddcb893239.jpg",
 		"type": "image",
 
 		"url": "",
-		"date": "2010-09-01",
+		"date": "2010/09/01",
 		"title_en": "",
 		"title_jp": "",
 
 		"artist": "ayakura_juu"
-	}*/
+	},
+	"2016-11": {
+		"filename": "c63249c7f927fc8792a2ee53672de2c2.jpg",
+		"type": "image",
+
+		"url": "http://www.pixiv.net/member_illust.php?mode=medium&illust_id=55312545",
+		"date": "2016/02/15",
+		"title_en": "Various",
+		"title_jp": "いろいろ",
+
+		"artist": "isshiki_(ffmania7)"
+	},
+	"2016-12": {
+		"filename": "bde3634421f340b535ebd531ea9ccbc2.png",
+		"type": "image",
+
+		"url": "http://www.pixiv.net/member_illust.php?mode=medium&illust_id=48157434",
+		"date": "2015/01/13",
+		"title_en": "",
+		"title_jp": "ゆきわっち",
+
+		"artist": "kawakami_rokkaku"
+	},
+	"2017-01": {
+		"filename": "d11d1cb233b29bae7d310dc6ed282712.jpg",
+		"type": "image",
+
+		"url": "http://www.pixiv.net/member_illust.php?mode=medium&illust_id=48916973",
+		"date": "2015/02/23",
+		"title_en": "",
+		"title_jp": "【乙未年】恭赫新禧",
+
+		"artist": "black_row"
+	},
+	"2017-02": {
+		"filename": "b7dc901a49adff9cbf2d65754ad098c3.jpg",
+		"type": "image",
+
+		"url": "",
+		"date": "2010/09/01",
+		"title_en": "",
+		"title_jp": "",
+
+		"artist": "ayakura_juu"
+	},
+	"2017-03": {
+		"filename": "076ea03de95a7989bedc9dac1e609f06.jpg",
+		"type": "image",
+
+		"url": "http://www.pixiv.net/member_illust.php?mode=medium&illust_id=730222",
+		"date": "2018/04/29",
+		"title_en": "",
+		"title_jp": "クーピーでホロ・2",
+
+		"artist": "gofu"
+	},
+	"2017-04": {
+		"filename": "b4d9bac84ff8ae5d99f33e9a203548d0.jpg",
+		"type": "image",
+
+		"url": "",
+		"date": "2018/03/05",
+		"title_en": "",
+		"title_jp": "わっち",
+
+		"artist": "m-hit"
+	}
 }

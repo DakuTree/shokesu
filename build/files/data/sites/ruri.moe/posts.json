@@ -116,12 +116,12 @@
 		"type": "image",
 
 		"url": "http://www.pixiv.net/member_illust.php?mode=medium&illust_id=16369216",
-		"date": "2011/XX/XX",
+		"date": "",
 		"title_en": "",
 		"title_jp": "",
 
 		"artist": "kaya_(c14)"
-	}/*,
+	},
 	"2016-10": {
 		"filename": "949c45fbc827b30dab995a8a506086da.png",
 		"type": "image",
@@ -132,5 +132,71 @@
 		"title_jp": "髪結び",
 
 		"artist": "suzumeko"
-	}*/
+	},
+	"2016-11": {
+		"filename": "334d1e8c8380ee7c2fc8bef9ec69471f.png",
+		"type": "image",
+
+		"url": "http://www.pixiv.net/member_illust.php?mode=medium&illust_id=15007977",
+		"date": "2010/12/05",
+		"title_en": "Kuroneko-chan",
+		"title_jp": "黒猫ちゃん",
+
+		"artist": "soono_(rlagpfl)"
+	},
+	"2016-12": {
+		"filename": "45b5011393d13a867ff6744aaba9fd9b.jpg",
+		"type": "image",
+
+		"url": "http://www.pixiv.net/member_illust.php?mode=medium&illust_id=23643050",
+		"date": "2011/12/14",
+		"title_en": "",
+		"title_jp": "雪猫の冬",
+
+		"artist": "edogawakid"
+	},
+	"2017-01": {
+		"filename": "bacec6ea37f872f824b1b5e9e47a5820.png",
+		"type": "image",
+
+		"url": "http://www.pixiv.net/member_illust.php?mode=medium&illust_id=56436071",
+		"date": "2016/04/20",
+		"title_en": "",
+		"title_jp": "二十歳の猫へ",
+
+		"artist": "herunin"
+	},
+	"2017-02": {
+		"filename": "8a25ded058739980d696292a17b7e4c8.jpg",
+		"type": "image",
+
+		"url": "http://www.pixiv.net/member_illust.php?mode=medium&illust_id=15492618",
+		"date": "201X/XX/01",
+		"title_en": "",
+		"title_jp": "",
+
+		"artist": "hiyo_kiki"
+	},
+	"2017-03": {
+		"filename": "904967927540d54cd54744df4b855992.jpg",
+		"type": "image",
+
+		"url": "http://www.pixiv.net/member_illust.php?mode=medium&illust_id=15159059",
+		"date": "2010/12/13",
+		"title_en": "Black Cat-chan",
+		"title_jp": "黒猫さん",
+
+		"artist": "tsukii"
+	},
+	"2017-04": {
+		"filename": "9e305f97d92c559ce6ed6da91ec0c7e3.png",
+		"type": "image",
+
+		"url": "http://www.pixiv.net/member_illust.php?mode=medium&illust_id=23599399",
+		"date": "",
+		"title_en": "",
+		"title_jp": "",
+
+		"artist": "suzumeko"
+	}
 }
