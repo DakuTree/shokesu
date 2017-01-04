@@ -123,7 +123,7 @@ module.exports = function(grunt){
 					ver: '<%= ver %>',
 					version: '<%= pkg.version %>',
 
-					DATE: (new Date().getFullYear())+'-'+("0" + (new Date().getMonth() + 2)).slice(-2),
+					DATE: (new Date().getMonth() == 11 ? (new Date().getFullYear() + 1)+'-01' : (new Date().getFullYear())+'-'+("0" + (new Date().getMonth() + 2)).slice(-2)),
 
 					/**Post functions**/
 					//FIXME: This is currently not built for multiple differnt kinds of posts.
@@ -131,6 +131,7 @@ module.exports = function(grunt){
 					//      Currently everything is just being defaulted to EN
 					//FIXME: Currently date has to be checked if it's an array. Unsure if this is a preprocess or grunt bug.
 					getPostFilename: function(date) {
+						console.log(date);
 						if(date instanceof Array) date = date[0];
 						var post = grunt.config.get('postData')['posts'][date];
 
